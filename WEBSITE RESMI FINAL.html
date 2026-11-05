@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102b4e">
+  <meta name="description" content="PEMIMPIN MUDA GENERASI BANGSA.">
+    <title>© SOPIYAN | PROFIL RESMI</title>
+    
+    <!-- Google Fonts: Inter untuk teks biasa, Playfair Display untuk kesan formal pada judul -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        navy: {
+                            DEFAULT: '#0f172a', // Warna biru dongker formal
+                            light: '#1e293b',
+                            blue: '#1d4ed8' // Aksen biru resmi
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #f8fafc;
+            color: #334155;
+        }
+        
+        /* Efek garis bawah animasi pada menu navigasi */
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #1d4ed8;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Bayangan halus untuk kartu */
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.01);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-navy-blue selection:text-white">
+
+   <!-- 1. HEADER & NAVIGASI -->
+    <header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Identitas / Logo (Ukuran diperbesar ke h-14 md:h-16) -->
+                <a href="#beranda" class="flex items-center gap-2">
+                    <img src="https://i.ibb.co.com/BVmbzyR0/logo.png" alt="Logo Sopiyan" class="h-14 md:h-16 w-auto object-contain py-1">
+                </a>
+
+                <!-- Menu Desktop -->
+                <nav class="hidden md:flex space-x-6 lg:space-x-8 items-center font-medium text-sm text-slate-600">
+                    <a href="#beranda" class="nav-link hover:text-navy transition-colors">Beranda</a>
+                    <a href="#tentang" class="nav-link hover:text-navy transition-colors">Tentang Saya</a>
+                    <a href="#pendidikan" class="nav-link hover:text-navy transition-colors">Pendidikan</a>
+                    <a href="#pengalaman" class="nav-link hover:text-navy transition-colors">Pengalaman</a>
+                    <a href="#fokus" class="nav-link hover:text-navy transition-colors">Fokus & Minat</a>
+                    <a href="#kontak" class="px-5 py-2.5 bg-navy text-white rounded-md hover:bg-navy-light transition-all shadow-md">
+                        Hubungi Saya
+                    </a>
+                </nav>
+
+                <!-- Tombol Menu Mobile -->
+                <button id="mobile-menu-btn" class="md:hidden text-navy hover:text-navy-blue focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Mobile (Tersembunyi secara default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg">
+            <div class="flex flex-col px-6 py-4 space-y-4">
+                <a href="#beranda" class="mobile-link text-slate-700 font-medium hover:text-navy-blue">Beranda</a>
+                <a href="#tentang" class="mobile-link text-slate-700 font-medium hover:text-navy-blue">Tentang Saya</a>
+                <a href="#pendidikan" class="mobile-link text-slate-700 font-medium hover:text-navy-blue">Pendidikan</a>
+                <a href="#pengalaman" class="mobile-link text-slate-700 font-medium hover:text-navy-blue">Pengalaman</a>
+                <a href="#fokus" class="mobile-link text-slate-700 font-medium hover:text-navy-blue">Fokus & Minat</a>
+                <a href="#kontak" class="mobile-link text-navy-blue font-bold">Hubungi Saya</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- KONTEN UTAMA -->
+    <main>
+        <!-- 2. BERANDA (Hero Section) -->
+        <section id="beranda" class="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-br from-slate-50 to-slate-100 min-h-[90vh] flex items-center">
+            <div class="max-w-6xl mx-auto px-6 lg:px-8 w-full">
+                <div class="flex flex-col-reverse md:flex-row items-center gap-12 lg:gap-16">
+                    
+                    <!-- Teks Perkenalan -->
+                    <div class="w-full md:w-3/5 text-center md:text-left">
+                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100 text-navy-blue text-xs font-bold tracking-widest uppercase mb-6">
+                            <i class="fa-solid fa-landmark"></i> Profil Resmi
+                        </div>
+                        <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-bold text-navy leading-tight mb-4">
+                            SOPIYAN
+                        </h1>
+                        <h2 class="text-xl md:text-2xl font-medium text-slate-600 mb-6">
+                            Pemimpin Muda Generasi Bangsa
+                        </h2>
+                        <p class="text-slate-600 text-base md:text-lg leading-relaxed mb-8 max-w-xl mx-auto md:mx-0">
+                            Berkomitmen pada tata kelola pemerintahan yang baik, pelayanan publik yang responsif, dan pembangunan desa yang inklusif untuk mewujudkan kesejahteraan masyarakat.
+                        </p>
+                        <div class="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
+                            <a href="#kontak" class="w-full sm:w-auto px-6 py-3 bg-navy text-white text-sm font-semibold rounded-md hover:bg-navy-light transition-all shadow-lg text-center">
+                                Mari Berdiskusi
+                            </a>
+                            <a href="#tentang" class="w-full sm:w-auto px-6 py-3 bg-white text-navy border border-slate-300 text-sm font-semibold rounded-md hover:bg-slate-50 transition-all text-center">
+                                Kenali Saya
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Foto Profil Formal Bulat Tanpa Bingkai Belakang -->
+                    <div class="w-full md:w-2/5 flex justify-center">
+                        <div class="w-64 h-64 md:w-80 md:h-80">
+                            <!-- Gambar dengan bentuk bulat (rounded-full) murni -->
+                            <img class="w-full h-full object-cover rounded-full shadow-xl bg-white" src="https://cdn.phototourl.com/member/2026-10-25-c2525906-e5d8-4a15-b314-a14c5eb94846.jpg" alt="Foto Profil Sopiyan">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. TENTANG SAYA -->
+        <section id="tentang" class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row gap-12 items-start">
+                    
+                    <!-- Judul Bagian -->
+                    <div class="w-full md:w-1/3">
+                        <h2 class="font-serif text-3xl md:text-4xl font-bold text-navy mb-2">Tentang Saya</h2>
+                        <div class="w-16 h-1 bg-navy-blue rounded-full mb-6"></div>
+                        <p class="text-slate-500 font-medium">Mengenal lebih dekat visi, dedikasi, dan prinsip kepemimpinan.</p>
+                    </div>
+                    
+                    <!-- Narasi Profil -->
+                    <div class="w-full md:w-2/3 text-slate-600 leading-relaxed space-y-5 text-lg">
+                        <p>
+                            Saya, <strong>Sopiyan</strong>, memiliki dedikasi yang mendalam di bidang Ilmu Pemerintahan dan Tata Kelola Publik. Latar belakang akademik saya telah membentuk kerangka berpikir analitis yang kuat dalam memahami dinamika kebijakan publik dan sistem pemerintahan di Indonesia.
+                        </p>
+                        <p>
+                            Saya meyakini bahwa pemerintahan yang efektif berakar pada prinsip transparansi, akuntabilitas, dan partisipasi aktif masyarakat. Fokus utama saya adalah menjembatani kebijakan pemerintah dengan kebutuhan riil masyarakat, agar kebijakan tidak hanya dirumuskan, tetapi juga berdampak nyata.
+                        </p>
+                        
+                        <!-- Biodata Singkat -->
+                        <div class="bg-white border border-slate-200 p-6 mt-8 rounded-lg shadow-sm">
+                            <h3 class="font-serif font-bold text-navy text-xl mb-4 border-b pb-2">Biodata Singkat</h3>
+                            <table class="w-full text-base text-slate-600">
+                                <tbody>
+                                    <tr class="border-b border-slate-100">
+                                        <td class="py-2 font-medium w-1/3 align-top">Nama Panggilan</td>
+                                        <td class="py-2 align-top">: Piyan</td>
+                                    </tr>
+                                    <tr class="border-b border-slate-100">
+                                        <td class="py-2 font-medium align-top">Suku</td>
+                                        <td class="py-2 align-top">: <a href="https://id.wikipedia.org/wiki/Suku_Sunda" target="_blank" rel="noopener noreferrer" class="text-navy-blue font-semibold hover:underline transition-colors">Sunda</a> &amp; <a href="https://id.wikipedia.org/wiki/Suku_Jawa" target="_blank" rel="noopener noreferrer" class="text-navy-blue font-semibold hover:underline transition-colors">Jawa</a></td>
+                                    </tr>
+                                    <tr class="border-b border-slate-100">
+                                        <td class="py-2 font-medium align-top">Domisili</td>
+                                        <td class="py-2 align-top">: <a href="https://id.wikipedia.org/wiki/Kabupaten_Lampung_Selatan" target="_blank" rel="noopener noreferrer" class="text-navy-blue font-semibold hover:underline transition-colors">Kabupaten Lampung Selatan</a></td>
+                                    </tr>
+                                    <tr class="border-b border-slate-100">
+                                        <td class="py-2 font-medium align-top">Agama</td>
+                                        <td class="py-2 align-top">: Islam</td>
+                                    </tr>
+                                    <tr class="border-b border-slate-100">
+                                        <td class="py-2 font-medium align-top">Status Perkawinan</td>
+                                        <td class="py-2 align-top">: Belum Menikah</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 font-medium align-top">Zodiak</td>
+                                        <td class="py-2 align-top">: <a href="https://id.wikipedia.org/wiki/Akuarius_(astrologi)" target="_blank" rel="noopener noreferrer" class="text-navy-blue font-semibold hover:underline transition-colors">Aquarius</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="bg-slate-50 border-l-4 border-navy-blue p-6 mt-8 rounded-r-lg">
+                            <h3 class="font-serif font-bold text-navy text-xl mb-3">Prinsip Kepemimpinan</h3>
+                            <ul class="space-y-2 text-base">
+                                <li><i class="fa-solid fa-check text-green-600 mr-2"></i> <strong>Integritas:</strong> Mencerminkan kejujuran dan etika dalam setiap tindakan.</li>
+                                <li><i class="fa-solid fa-check text-green-600 mr-2"></i> <strong>Kolaborasi:</strong> Membangun sinergi antar pihak untuk solusi bersama.</li>
+                                <li><i class="fa-solid fa-check text-green-600 mr-2"></i> <strong>Pengabdian:</strong> Mengorientasikan ilmu dan karya demi kesejahteraan masyarakat.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. PENDIDIKAN -->
+        <section id="pendidikan" class="py-20 bg-slate-50 border-y border-slate-200">
+            <div class="max-w-6xl mx-auto px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold text-navy mb-4">Latar Belakang Pendidikan</h2>
+                    <p class="text-slate-600">Pondasi akademik yang kuat sebagai landasan dalam menganalisis dan merumuskan kebijakan yang berdampak nyata.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <!-- Universitas Terbuka -->
+                    <div class="bg-white p-6 rounded-xl card-shadow border border-slate-100 flex gap-5 items-start">
+                        <div class="flex-shrink-0 w-16 h-16 bg-white rounded-lg flex items-center justify-center border border-slate-100 shadow-sm p-1">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Logo_Universitas_Terbuka.MP4.png?utm_source=id.wikipedia.org&utm_campaign=index&utm_content=original" alt="Logo UT" class="w-full h-full object-contain">
+                        </div>
+                        <div>
+                            <div class="text-xs font-bold text-navy-blue mb-1 uppercase tracking-wide">Mahasiswa Aktif S1</div>
+                            <h3 class="text-xl font-bold text-navy mb-1">Ilmu Pemerintahan (RPL)</h3>
+                            <p class="text-slate-700 font-semibold mb-1">Universitas Terbuka (UT)</p>
+                            <p class="text-sm text-slate-500 leading-relaxed">
+                                Fakultas Hukum Ilmu Sosial Dan Ilmu Politik
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Universitas Indonesia Mandiri -->
+                    <div class="bg-white p-6 rounded-xl card-shadow border border-slate-100 flex gap-5 items-start">
+                        <div class="flex-shrink-0 w-16 h-16 bg-white rounded-lg flex items-center justify-center border border-slate-100 shadow-sm p-1">
+                            <img src="https://uimandiri.ac.id/assets/logo/logoutamauim.png" alt="Logo UIM" class="w-full h-full object-contain">
+                        </div>
+                        <div>
+                            <div class="text-xs font-bold text-navy-blue mb-1 uppercase tracking-wide">Mahasiswa Aktif S1</div>
+                            <h3 class="text-xl font-bold text-navy mb-1">Administrasi Publik (Non Reguler)</h3>
+                            <p class="text-slate-700 font-semibold mb-1">Universitas Indonesia Mandiri (UIM)</p>
+                            <p class="text-sm text-slate-500 leading-relaxed">
+                                Fakultas Sosial dan Humaniora
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. PENGALAMAN LAIN (Pengalaman Selain Bekerja) -->
+        <section id="pengalaman" class="py-20 bg-white">
+            <div class="max-w-6xl mx-auto px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row gap-12 items-start">
+                    
+                    <div class="w-full md:w-1/3 md:sticky md:top-28">
+                        <h2 class="font-serif text-3xl md:text-4xl font-bold text-navy mb-2">Pengalaman Lain</h2>
+                        <div class="w-16 h-1 bg-navy-blue rounded-full mb-6"></div>
+                        <p class="text-slate-500 mb-8">Rekam jejak dedikasi, kepemimpinan, dan partisipasi aktif dalam berbagai organisasi kemahasiswaan serta kepanitiaan di masyarakat.</p>
+                    </div>
+
+                    <div class="w-full md:w-2/3">
+                        <div class="grid grid-cols-1 gap-5">
+                            
+                            <!-- Pengalaman 1 -->
+                            <div class="p-5 border-l-4 border-navy-blue bg-slate-50 rounded-r-lg hover:shadow-md transition-shadow">
+                                <h3 class="font-bold text-navy text-lg">Ketua Ormawa</h3>
+                                <p class="text-slate-600 font-medium">Organisasi Mahasiswa Universitas Terbuka Salut Kalianda</p>
+                                <div class="mt-2 inline-flex items-center text-xs font-semibold text-navy-blue bg-blue-50 px-2.5 py-1 rounded">
+                                    <i class="fa-regular fa-calendar mr-2"></i> Periode 2026-2027
+                                </div>
+                            </div>
+
+                            <!-- Pengalaman 2 -->
+                            <div class="p-5 border-l-4 border-slate-400 bg-slate-50 rounded-r-lg hover:shadow-md transition-shadow">
+                                <h3 class="font-bold text-navy text-lg">Ketua KPPS</h3>
+                                <p class="text-slate-600 font-medium">Pilkada Serentak</p>
+                                <div class="mt-2 inline-flex items-center text-xs font-semibold text-slate-600 bg-slate-200 px-2.5 py-1 rounded">
+                                    <i class="fa-regular fa-calendar mr-2"></i> Tahun 2025
+                                </div>
+                            </div>
+
+                            <!-- Pengalaman 3 -->
+                            <div class="p-5 border-l-4 border-slate-400 bg-slate-50 rounded-r-lg hover:shadow-md transition-shadow">
+                                <h3 class="font-bold text-navy text-lg">Petugas Pemutakhiran Data Pemilih (Pantarlih)</h3>
+                                <p class="text-slate-600 font-medium">Pilkada Serentak</p>
+                                <div class="mt-2 inline-flex items-center text-xs font-semibold text-slate-600 bg-slate-200 px-2.5 py-1 rounded">
+                                    <i class="fa-regular fa-calendar mr-2"></i> Tahun 2025
+                                </div>
+                            </div>
+
+                            <!-- Pengalaman 4 -->
+                            <div class="p-5 border-l-4 border-slate-400 bg-slate-50 rounded-r-lg hover:shadow-md transition-shadow">
+                                <h3 class="font-bold text-navy text-lg">Peserta Pelatihan BPBD Penanggulangan Bencana Pasti II</h3>
+                                <p class="text-slate-600 font-medium">Badan Penanggulangan Bencana Daerah</p>
+                                <div class="mt-2 inline-flex items-center text-xs font-semibold text-slate-600 bg-slate-200 px-2.5 py-1 rounded">
+                                    <i class="fa-regular fa-calendar mr-2"></i> Tahun 2025
+                                </div>
+                            </div>
+
+                            <!-- Pengalaman 5 -->
+                            <div class="p-5 border-l-4 border-slate-400 bg-slate-50 rounded-r-lg hover:shadow-md transition-shadow">
+                                <h3 class="font-bold text-navy text-lg">Petugas Pemutakhiran Data Pemilih (Pantarlih)</h3>
+                                <p class="text-slate-600 font-medium">Pemilu Serentak</p>
+                                <div class="mt-2 inline-flex items-center text-xs font-semibold text-slate-600 bg-slate-200 px-2.5 py-1 rounded">
+                                    <i class="fa-regular fa-calendar mr-2"></i> Tahun 2024
+                                </div>
+                            </div>
+
+                            <!-- Pengalaman 6 -->
+                            <div class="p-5 border-l-4 border-slate-400 bg-slate-50 rounded-r-lg hover:shadow-md transition-shadow">
+                                <h3 class="font-bold text-navy text-lg">Anggota KPPS</h3>
+                                <p class="text-slate-600 font-medium">Pemilu Serentak</p>
+                                <div class="mt-2 inline-flex items-center text-xs font-semibold text-slate-600 bg-slate-200 px-2.5 py-1 rounded">
+                                    <i class="fa-regular fa-calendar mr-2"></i> Tahun 2024
+                                </div>
+                            </div>
+
+                            <!-- Pengalaman 7 -->
+                            <div class="p-5 border-l-4 border-slate-400 bg-slate-50 rounded-r-lg hover:shadow-md transition-shadow">
+                                <h3 class="font-bold text-navy text-lg">Peserta Pelatihan BPBD Penanggulangan Bencana Pasti II</h3>
+                                <p class="text-slate-600 font-medium">Badan Penanggulangan Bencana Daerah</p>
+                                <div class="mt-2 inline-flex items-center text-xs font-semibold text-slate-600 bg-slate-200 px-2.5 py-1 rounded">
+                                    <i class="fa-regular fa-calendar mr-2"></i> Tahun 2024
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. FOKUS & MINAT -->
+        <section id="fokus" class="py-20 bg-slate-50 border-y border-slate-200">
+            <div class="max-w-6xl mx-auto px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row gap-12 items-start">
+                    
+                    <div class="w-full md:w-1/3 md:sticky md:top-28">
+                        <h2 class="font-serif text-3xl md:text-4xl font-bold text-navy mb-2">Fokus & Minat</h2>
+                        <div class="w-16 h-1 bg-navy-blue rounded-full mb-6"></div>
+                        <p class="text-slate-500 mb-8">Area keahlian dan minat utama dalam ranah tata kelola publik dan pemerintahan.</p>
+                        
+                        <!-- Badges -->
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-2 bg-white text-navy font-semibold text-sm rounded-md border border-slate-200 shadow-sm">Kebijakan Publik</span>
+                            <span class="px-4 py-2 bg-white text-navy font-semibold text-sm rounded-md border border-slate-200 shadow-sm">Reformasi Birokrasi</span>
+                            <span class="px-4 py-2 bg-white text-navy font-semibold text-sm rounded-md border border-slate-200 shadow-sm">E-Government</span>
+                            <span class="px-4 py-2 bg-white text-navy font-semibold text-sm rounded-md border border-slate-200 shadow-sm">Perencanaan Wilayah</span>
+                        </div>
+                    </div>
+
+                    <div class="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Kartu Minat 1 -->
+                        <div class="p-6 border border-slate-200 rounded-xl hover:border-navy-blue hover:shadow-lg transition-all bg-white group">
+                            <i class="fa-solid fa-landmark text-3xl text-navy-blue mb-4 group-hover:-translate-y-1 transition-transform"></i>
+                            <h3 class="text-lg font-bold text-navy mb-2">Tata Kelola Publik (Good Governance)</h3>
+                            <p class="text-sm text-slate-600">
+                                Mendukung sistem pemerintahan yang transparan, bersih dari KKN, serta memegang teguh prinsip akuntabilitas dalam mengelola sumber daya publik.
+                            </p>
+                        </div>
+                        
+                        <!-- Kartu Minat 2 -->
+                        <div class="p-6 border border-slate-200 rounded-xl hover:border-navy-blue hover:shadow-lg transition-all bg-white group">
+                            <i class="fa-solid fa-users-gear text-3xl text-navy-blue mb-4 group-hover:-translate-y-1 transition-transform"></i>
+                            <h3 class="text-lg font-bold text-navy mb-2">Inovasi Pelayanan Publik</h3>
+                            <p class="text-sm text-slate-600">
+                                Berfokus pada perbaikan standar pelayanan masyarakat yang cepat, tepat, responsif, dan mudah diakses melalui optimalisasi teknologi.
+                            </p>
+                        </div>
+
+                        <!-- Kartu Minat 3 -->
+                        <div class="p-6 border border-slate-200 rounded-xl hover:border-navy-blue hover:shadow-lg transition-all bg-white group">
+                            <i class="fa-solid fa-tree-city text-3xl text-navy-blue mb-4 group-hover:-translate-y-1 transition-transform"></i>
+                            <h3 class="text-lg font-bold text-navy mb-2">Pembangunan Desa</h3>
+                            <p class="text-sm text-slate-600">
+                                Menganalisis potensi lokal dan pemberdayaan masyarakat untuk menciptakan desa yang mandiri, sejahtera, dan berkelanjutan.
+                            </p>
+                        </div>
+
+                        <!-- Kartu Minat 4 -->
+                        <div class="p-6 border border-slate-200 rounded-xl hover:border-navy-blue hover:shadow-lg transition-all bg-white group">
+                            <i class="fa-solid fa-handshake-angle text-3xl text-navy-blue mb-4 group-hover:-translate-y-1 transition-transform"></i>
+                            <h3 class="text-lg font-bold text-navy mb-2">Partisipasi Masyarakat</h3>
+                            <p class="text-sm text-slate-600">
+                                Mendorong keterlibatan aktif masyarakat dalam proses perencanaan, pelaksanaan, dan pengawasan program-program pemerintah.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. KONTAK & CALL TO ACTION -->
+        <section id="kontak" class="py-24 bg-navy relative overflow-hidden">
+            <!-- Pola dekoratif -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-navy-blue/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-900/20 rounded-full blur-3xl"></div>
+            
+            <div class="max-w-4xl mx-auto px-6 lg:px-8 relative z-10 text-center">
+                <h2 class="font-serif text-3xl md:text-5xl font-bold text-white mb-6">Mari Terhubung & Berkolaborasi</h2>
+                <p class="text-slate-300 text-lg mb-10 max-w-2xl mx-auto">
+                    Saya selalu terbuka untuk diskusi mengenai tata kelola pemerintahan, kebijakan publik, dan peluang kerja sama untuk membangun masyarakat yang lebih baik.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-5 justify-center">
+                    <!-- Tombol WhatsApp -->
+                    <a href="https://wa.me/6283183149680" target="_blank" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#25D366] text-white font-bold rounded-md hover:bg-[#20bd5a] transition-all shadow-lg shadow-green-900/30">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Hubungi via WhatsApp
+                    </a>
+                    
+                    <!-- Tombol Email -->
+                    <a href="mailto:sopiyan.go.id@gmail.com" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-navy font-bold rounded-md hover:bg-slate-100 transition-all shadow-lg">
+                        <i class="fa-solid fa-envelope text-xl text-navy-blue"></i> Kirim Email
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 8. FOOTER -->
+    <footer class="bg-[#0a1120] border-t border-slate-800 py-10 text-center">
+        <div class="max-w-6xl mx-auto px-6">
+            <h3 class="font-serif text-2xl font-bold text-white tracking-widest mb-2"></h3>
+            <p class="text-slate-500 text-sm mb-6"></p>
+
+            
+            <div class="flex justify-center gap-6 mb-8">
+                <!-- Ikon TikTok -->
+                <a href="https://www.tiktok.com/@hai.sopiyan" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center hover:bg-navy-blue hover:text-white transition-all">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <!-- Ikon Instagram -->
+                <a href="https://www.instagram.com/hai.sopiyan_/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-slate-800 text-slate-400 flex items-center justify-center hover:bg-navy-blue hover:text-white transition-all">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+            
+            <p class="text-slate-600 text-xs font-medium">
+                &copy; <span id="year"></span> SOPIYAN · Hak Cipta Dilindungi Undang-Undang.
+            </p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        // Update tahun otomatis pada footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Logika Menu Mobile (Hamburger Menu)
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
