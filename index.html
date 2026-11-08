@@ -1,61 +1,61 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#102b4e">
-    <meta name="description" content="VIDYA, SEVA, NAYATVA.&#10;(Ilmu, Pengabdian, dan Kepemimpinan)">
+    <meta name="theme-color" content="#09090b">
     
-    <!-- Open Graph / Facebook / WhatsApp -->
+    <!-- SEO & Meta Tags -->
+    <title>SOPIYAN | Public Governance & Leadership</title>
+    <meta name="description" content="Website profil resmi SOPIYAN. Berdedikasi pada tata kelola pemerintahan, pelayanan publik, dan pembangunan masyarakat. Vidya, Seva, Nayatva.">
+    <meta name="keywords" content="Sopiyan, Ilmu Pemerintahan, Administrasi Publik, Kepemimpinan, Pelayanan Publik, Lampung Selatan">
+    <meta name="author" content="Sopiyan">
+    
+    <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sopiyan-go-id.github.io/">
-    <meta property="og:title" content="© SOPIYAN | PROFIL RESMI">
-    <meta property="og:description" content="VIDYA, SEVA, NAYATVA.&#10;(Ilmu, Pengabdian, dan Kepemimpinan)">
+    <meta property="og:title" content="SOPIYAN | Profil Resmi & Personal Branding">
+    <meta property="og:description" content="Berdedikasi pada tata kelola pemerintahan, pelayanan publik, dan pembangunan masyarakat.">
     <meta property="og:image" content="https://i.ibb.co.com/BVmbzyR0/logo.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-
-    <!-- Twitter / X -->
+    
+    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://sopiyan-go-id.github.io/">
-    <meta property="twitter:title" content="© SOPIYAN | PROFIL RESMI">
-    <meta property="twitter:description" content="VIDYA, SEVA, NAYATVA.&#10;(Ilmu, Pengabdian, dan Kepemimpinan)">
-    <meta property="twitter:image" content="https://i.ibb.co.com/BVmbzyR0/logo.png">
+    <meta property="twitter:title" content="SOPIYAN | Profil Resmi">
+    <meta property="twitter:description" content="Vidya, Seva, Nayatva - Ilmu, Pengabdian, dan Kepemimpinan.">
     
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://sopiyan-go-id.github.io/">
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome Icons -->
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- AOS Animation Library (CSS) -->
+    <!-- AOS Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS (CDN for single-file deployment) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                        script: ['Great Vibes', 'cursive'],
-                        times: ['"Times New Roman"', 'Times', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
                     },
                     colors: {
-                        navy: {
-                            DEFAULT: '#0f172a', 
-                            light: '#1e293b',
-                            blue: '#1d4ed8' 
-                        },
-                        accent: {
-                            gold: '#d97706',
-                            teal: '#0f766e',
-                            blue: '#2563eb',
-                            purple: '#7c3aed'
+                        brand: {
+                            dark: '#09090b',    // Zinc 950
+                            darker: '#000000',
+                            light: '#fafafa',   // Zinc 50
+                            gold: '#c5a059',    // Champagne Gold
+                            goldHover: '#b08d48',
+                            grey: '#27272a'     // Zinc 800
                         }
                     }
                 }
@@ -63,489 +63,409 @@
         }
     </script>
 
+    <!-- Custom CSS -->
     <style>
-        body {
-            background-color: #f8fafc;
-            color: #334155;
-            scroll-behavior: smooth;
-            overflow-x: hidden;
+        /* Base optimizations */
+        body { font-feature-settings: "cv02", "cv03", "cv04", "cv11"; }
+        ::selection { background-color: #c5a059; color: #fff; }
+        
+        /* Smooth, minimalist utilities */
+        .glass-nav {
+            background: rgba(9, 9, 11, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
         
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #e5e5e5 0%, #c5a059 50%, #9a7b40 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hover-lift {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        /* Nav link hover effect */
         .nav-link { position: relative; }
         .nav-link::after {
-            content: ''; position: absolute; width: 0; height: 2px;
-            bottom: -4px; left: 0; background-color: #2563eb;
+            content: '';
+            position: absolute;
+            width: 0; height: 1px;
+            bottom: -4px; left: 0;
+            background-color: #c5a059;
             transition: width 0.3s ease;
         }
         .nav-link:hover::after { width: 100%; }
 
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        /* Subtle grid background */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
         }
-        
-        .bg-animated-gradient {
-            background: linear-gradient(-45deg, #f8fafc, #e0e7ff, #f0fdf4, #eff6ff);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-        }
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .bg-grid-dark {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
         }
 
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-
-        .hover-glow { transition: all 0.4s ease; }
-        .hover-glow:hover {
-            box-shadow: 0 0 25px rgba(37, 99, 235, 0.15);
-            transform: translateY(-5px);
-        }
-
-        .bg-grid-pattern {
-            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
-            background-size: 30px 30px;
+        /* Timeline styling */
+        .timeline-dot {
+            position: absolute;
+            left: -5px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #c5a059;
+            box-shadow: 0 0 0 4px #fafafa;
         }
     </style>
 </head>
-<body class="antialiased selection:bg-accent-blue selection:text-white relative">
+<body class="bg-brand-light text-zinc-800 antialiased relative">
 
-    <!-- HEADER & NAVIGASI -->
-    <header class="fixed w-full top-0 z-50 glass-panel border-b border-white/50 transition-all duration-300" id="navbar">
-        <div class="max-w-6xl mx-auto px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <a href="#beranda" class="flex items-center gap-2 group">
-                    <img src="https://i.ibb.co.com/BVmbzyR0/logo.png" alt="Logo Sopiyan" class="h-14 md:h-16 w-auto object-contain py-1 group-hover:scale-105 transition-transform duration-300 drop-shadow-md">
+    <!-- NAVIGATION -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 py-4 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center">
+            <a href="#beranda" class="flex items-center gap-3 group">
+                <img src="https://i.ibb.co.com/BVmbzyR0/logo.png" alt="Monogram Sopiyan" class="h-10 object-contain drop-shadow-lg opacity-90 group-hover:opacity-100 transition-opacity">
+                <span class="text-white font-serif font-semibold tracking-widest text-sm hidden sm:block">SOPIYAN</span>
+            </a>
+
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-zinc-300">
+                <a href="#tentang" class="nav-link hover:text-white transition-colors">Tentang</a>
+                <a href="#pendidikan" class="nav-link hover:text-white transition-colors">Pendidikan</a>
+                <a href="#pengalaman" class="nav-link hover:text-white transition-colors">Pengalaman</a>
+                <a href="#fokus" class="nav-link hover:text-white transition-colors">Fokus & Minat</a>
+                <a href="#publikasi" class="nav-link hover:text-white transition-colors">Publikasi</a>
+            </nav>
+
+            <div class="hidden lg:block">
+                <a href="#kontak" class="px-6 py-2.5 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-darker transition-all duration-300 rounded-sm text-sm font-semibold tracking-wide">
+                    Hubungi Sopiyan
                 </a>
-
-                <nav class="hidden md:flex space-x-6 lg:space-x-8 items-center font-medium text-sm text-slate-600">
-                    <a href="#beranda" class="nav-link hover:text-accent-blue transition-colors">Beranda</a>
-                    <a href="#tentang" class="nav-link hover:text-accent-blue transition-colors">Tentang Sopiyan</a>
-                    <a href="#pendidikan" class="nav-link hover:text-accent-blue transition-colors">Pendidikan</a>
-                    <a href="#pengalaman" class="nav-link hover:text-accent-blue transition-colors">Pengalaman</a>
-                    <a href="#fokus" class="nav-link hover:text-accent-blue transition-colors">Fokus & Minat</a>
-                    <a href="#kontak" class="px-6 py-2.5 bg-gradient-to-r from-navy to-navy-light text-white rounded-lg hover:from-accent-blue hover:to-navy transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-                        Hubungi Sopiyan
-                    </a>
-                </nav>
-
-                <button id="mobile-menu-btn" class="md:hidden text-navy hover:text-accent-blue focus:outline-none">
-                    <i class="fa-solid fa-bars text-2xl"></i>
-                </button>
             </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-btn" class="lg:hidden text-white hover:text-brand-gold focus:outline-none transition-colors" aria-label="Menu">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
         </div>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-xl border-t border-slate-100 absolute w-full shadow-2xl">
-            <div class="flex flex-col px-6 py-4 space-y-4">
-                <a href="#beranda" class="mobile-link text-slate-700 font-medium hover:text-accent-blue">Beranda</a>
-                <a href="#tentang" class="mobile-link text-slate-700 font-medium hover:text-accent-blue">Tentang Sopiyan</a>
-                <a href="#pendidikan" class="mobile-link text-slate-700 font-medium hover:text-accent-blue">Pendidikan</a>
-                <a href="#pengalaman" class="mobile-link text-slate-700 font-medium hover:text-accent-blue">Pengalaman</a>
-                <a href="#fokus" class="mobile-link text-slate-700 font-medium hover:text-accent-blue">Fokus & Minat</a>
-                <a href="#kontak" class="mobile-link text-accent-blue font-bold">Hubungi Sopiyan</a>
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-brand-darker border-t border-white/10 shadow-2xl">
+            <div class="flex flex-col px-6 py-6 space-y-5 text-sm font-medium">
+                <a href="#tentang" class="text-zinc-300 hover:text-brand-gold mobile-link">Tentang</a>
+                <a href="#pendidikan" class="text-zinc-300 hover:text-brand-gold mobile-link">Pendidikan</a>
+                <a href="#pengalaman" class="text-zinc-300 hover:text-brand-gold mobile-link">Pengalaman</a>
+                <a href="#fokus" class="text-zinc-300 hover:text-brand-gold mobile-link">Fokus & Minat</a>
+                <a href="#publikasi" class="text-zinc-300 hover:text-brand-gold mobile-link">Publikasi</a>
+                <a href="#kontak" class="text-brand-gold font-semibold pt-4 border-t border-white/10 mobile-link">Hubungi Sopiyan</a>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- BERANDA -->
-        <section id="beranda" class="pt-32 pb-20 md:pt-40 md:pb-28 bg-animated-gradient min-h-[95vh] flex items-center relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-30 z-0"></div>
-            
-            <div class="absolute top-20 -left-10 w-96 h-96 bg-blue-300 rounded-full mix-blend-multiply filter blur-[100px] opacity-40 animate-pulse"></div>
-            <div class="absolute bottom-20 -right-10 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-[100px] opacity-40"></div>
-            
-            <div class="max-w-6xl mx-auto px-6 lg:px-8 w-full relative z-10">
-                <div class="flex flex-col-reverse md:flex-row items-center gap-12 lg:gap-16">
+        <!-- HERO SECTION -->
+        <section id="beranda" class="relative min-h-screen flex items-center bg-brand-dark bg-grid-dark pt-20 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full relative z-10 py-20">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     
-                    <div class="w-full md:w-3/5 text-center md:text-left" data-aos="fade-right" data-aos-duration="1000">
-                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-accent-blue text-xs font-bold tracking-widest uppercase mb-6 shadow-sm">
-                            <i class="fa-solid fa-star text-accent-gold animate-spin" style="animation-duration: 4s;"></i> Profil Resmi
-                        </div>
-                        <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-navy leading-tight mb-2 drop-shadow-sm">
+                    <!-- Text Content -->
+                    <div data-aos="fade-right" data-aos-duration="1000">
+                        <p class="text-brand-gold font-medium tracking-[0.2em] text-sm uppercase mb-6 flex items-center gap-3">
+                            <span class="w-8 h-[1px] bg-brand-gold"></span>
+                            Public Governance & Leadership
+                        </p>
+                        <h1 class="font-serif text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-6">
                             SOPIYAN
                         </h1>
-                        
-                        <!-- BAGIAN TEKS LATIN DAN ARTINYA -->
-                        <div class="mb-6">
-                            <h2 class="font-script text-5xl md:text-6xl font-normal tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-accent-blue to-accent-purple py-3 px-2 -ml-2 mb-1 leading-relaxed">
-                                Vidya, Seva, Nayatva.
-                            </h2>
-                            <p class="font-times text-lg text-slate-600 italic">
-                                (Ilmu, Pengabdian, dan Kepemimpinan)
-                            </p>
-                        </div>
-                        
-                        <p class="text-slate-600 text-base md:text-lg leading-relaxed mb-8 max-w-xl mx-auto md:mx-0 mt-4">
-                            Berkomitmen pada tata kelola pemerintahan yang baik, pelayanan publik yang responsif, dan pembangunan desa yang inklusif untuk mewujudkan kesejahteraan masyarakat.
+                        <h2 class="text-2xl md:text-3xl text-zinc-400 font-serif italic mb-8">
+                            Vidya, Seva, Nayatva.
+                        </h2>
+                        <p class="text-zinc-400 text-lg leading-relaxed mb-10 max-w-lg font-light">
+                            Berdedikasi dalam membangun tata kelola pemerintahan yang baik, mendorong inovasi pelayanan publik, dan memperkuat partisipasi masyarakat untuk pembangunan inklusif.
                         </p>
-                        <div class="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
-                            <a href="#kontak" class="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-navy to-accent-blue text-white text-sm font-semibold rounded-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all transform hover:-translate-y-1 text-center">
-                                Mari Berdiskusi <i class="fa-solid fa-arrow-right ml-2"></i>
+                        <div class="flex flex-wrap gap-4">
+                            <a href="#tentang" class="px-8 py-3.5 bg-brand-gold text-brand-darker font-semibold text-sm hover:bg-brand-goldHover transition-colors rounded-sm shadow-[0_0_20px_rgba(197,160,89,0.2)]">
+                                Jelajahi Profil
                             </a>
-                            <a href="#tentang" class="w-full sm:w-auto px-8 py-3.5 glass-panel text-navy text-sm font-semibold rounded-lg hover:border-accent-blue hover:text-accent-blue transition-all text-center">
-                                Kenali Sopiyan
+                            <a href="#kontak" class="px-8 py-3.5 border border-zinc-700 text-white font-semibold text-sm hover:border-brand-gold hover:text-brand-gold transition-colors rounded-sm">
+                                Kolaborasi
                             </a>
-                        </div>
-                    </div>
-                    
-                    <div class="w-full md:w-2/5 flex justify-center" data-aos="fade-left" data-aos-duration="1200">
-                        <div class="relative w-64 h-64 md:w-[350px] md:h-[350px] animate-float">
-                            <div class="absolute inset-0 bg-gradient-to-tr from-accent-blue via-accent-purple to-accent-teal rounded-full blur-xl opacity-40"></div>
-                            <div class="absolute inset-2 border-2 border-dashed border-accent-blue/30 rounded-full animate-spin" style="animation-duration: 20s;"></div>
-                            
-                            <img class="relative w-full h-full object-cover rounded-full shadow-2xl ring-8 ring-white/80 backdrop-blur-sm" src="https://cdn.phototourl.com/member/2026-10-25-c2525906-e5d8-4a15-b314-a14c5eb94846.jpg" alt="Foto Profil Sopiyan">
                         </div>
                     </div>
 
+                    <!-- Visual Profile -->
+                    <div class="relative flex justify-center lg:justify-end" data-aos="fade-left" data-aos-duration="1200">
+                        <div class="relative w-72 h-80 md:w-96 md:h-[28rem] z-10">
+                            <!-- Decorative Elements -->
+                            <div class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-brand-gold opacity-50"></div>
+                            <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-brand-gold opacity-50"></div>
+                            
+                            <!-- Image Container (Tanpa Badge) -->
+                            <div class="w-full h-full overflow-hidden rounded-sm relative shadow-2xl">
+                                <div class="absolute inset-0 bg-brand-dark opacity-10 z-10 mix-blend-overlay"></div>
+                                <img src="https://cdn.phototourl.com/member/2026-10-25-c2525906-e5d8-4a15-b314-a14c5eb94846.jpg" alt="Potret Profesional Sopiyan" class="w-full h-full object-cover grayscale-[20%] contrast-[1.1] hover:grayscale-0 transition-all duration-700" loading="eager">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Tentang Sopiyan -->
-        <section id="tentang" class="py-24 bg-white relative">
+        <!-- TENTANG SAYA -->
+        <section id="tentang" class="py-32 bg-brand-light relative">
             <div class="max-w-6xl mx-auto px-6 lg:px-8">
-                <div class="flex flex-col md:flex-row gap-12 items-start">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
                     
-                    <div class="w-full md:w-1/3" data-aos="fade-up">
-                        <h2 class="font-serif text-3xl md:text-5xl font-bold text-navy mb-4">Tentang Sopiyan</h2>
-                        <div class="w-20 h-1.5 bg-gradient-to-r from-accent-blue via-accent-purple to-transparent rounded-full mb-6"></div>
-                        <p class="text-slate-500 font-medium text-lg">Mengenal lebih dekat visi, dedikasi, dan prinsip kepemimpinan.</p>
-                    </div>
-                    
-                    <div class="w-full md:w-2/3 text-slate-600 leading-relaxed space-y-6 text-lg" data-aos="fade-up" data-aos-delay="200">
-                        <p>
-                            <strong>SOPIYAN</strong> yang dikenal dengan sapaan <strong>(PIYAN)</strong> merupakan seorang mahasiswa sekaligus individu yang aktif dalam kegiatan keaparaturan pemerintahan berdomisili di Kabupaten Lampung Selatan, Provinsi Lampung. Latar belakang pendidikannya sangat berfokus pada sektor publik, di mana ia saat ini menempuh studi ganda pada disiplin Ilmu Pemerintahan dan Administrasi Publik.
-                        </p>
-                        <p>
-                            Sebagai bentuk implementasi dari keilmuannya, ia terlibat aktif secara praktis sebagai bagian dari penyelenggara pemilihan umum (Pemilu dan Pilkada) di tingkat daerah serta memimpin organisasi kemahasiswaan. Fokus perhatiannya meliputi penerapan prinsip pemerintahan yang baik (<em>good governance</em>), peningkatan kualitas pelayanan publik, dan penguatan partisipasi masyarakat desa. Dalam menjalankan aktivitas akademik maupun tugas pelayanannya, ia mengusung semboyan <em>"Vidya, Seva, Nayatva"</em> sebagai representasi dari nilai pengetahuan, pengabdian, dan kepemimpinan.
-                        </p>
-                        <p>
-                            Berikut adalah ringkasan profil dan rekam jejak dari Sopiyan: Berbekal latar belakang akademik di bidang Ilmu Pemerintahan dan Administrasi Publik, ia fokus menjembatani kebijakan pemerintah dengan kebutuhan riil masyarakat agar berdampak nyata.
-                        </p>
+                    <div class="lg:col-span-5" data-aos="fade-up">
+                        <span class="text-zinc-500 font-semibold tracking-widest text-xs uppercase mb-2 block">Profil Pribadi</span>
+                        <h2 class="font-serif text-4xl text-brand-darker font-bold mb-6">Tentang Sopiyan</h2>
+                        <div class="w-12 h-1 bg-brand-gold mb-8"></div>
                         
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                            <!-- Biodata Singkat -->
-                            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 p-6 rounded-2xl hover-glow">
-                                <h3 class="font-serif font-bold text-navy text-xl mb-4 border-b border-blue-200 pb-3 flex items-center gap-2">
-                                    <i class="fa-solid fa-fingerprint text-accent-blue"></i> Identitas
-                                </h3>
-                                <table class="w-full text-sm text-slate-600">
-                                    <tbody>
-                                        <tr class="border-b border-blue-100/50">
-                                            <td class="py-2.5 font-medium w-2/5">Nama Panggilan</td>
-                                            <td class="py-2.5 font-bold text-navy">: Piyan</td>
-                                        </tr>
-                                        <tr class="border-b border-blue-100/50">
-                                            <td class="py-2.5 font-medium">Suku</td>
-                                            <td class="py-2.5">: <a href="https://id.wikipedia.org/wiki/Suku_Sunda" target="_blank" class="text-accent-blue font-semibold hover:underline">Sunda</a> & <a href="https://id.wikipedia.org/wiki/Suku_Jawa" target="_blank" class="text-accent-blue font-semibold hover:underline">Jawa</a></td>
-                                        </tr>
-                                        <tr class="border-b border-blue-100/50">
-                                            <td class="py-2.5 font-medium">Domisili</td>
-                                            <td class="py-2.5">: <a href="https://id.wikipedia.org/wiki/Kabupaten_Lampung_Selatan" target="_blank" class="text-accent-blue font-semibold hover:underline">Lampung Selatan</a></td>
-                                        </tr>
-                                        <tr class="border-b border-blue-100/50">
-                                            <td class="py-2.5 font-medium">Agama</td>
-                                            <td class="py-2.5">: Islam</td>
-                                        </tr>
-                                        <tr class="border-b border-blue-100/50">
-                                            <td class="py-2.5 font-medium">Status</td>
-                                            <td class="py-2.5">: Belum Menikah</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="py-2.5 font-medium">Zodiak</td>
-                                            <td class="py-2.5">: <a href="https://id.wikipedia.org/wiki/Akuarius_(astrologi)" target="_blank" rel="noopener noreferrer" class="text-navy-blue font-semibold hover:underline transition-colors">Aquarius</a></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            
-                            <!-- Prinsip -->
-                            <div class="bg-gradient-to-br from-slate-800 to-navy p-6 rounded-2xl text-white shadow-xl hover-glow transform hover:-rotate-1 origin-bottom-right">
-                                <h3 class="font-serif font-bold text-white text-xl mb-4 border-b border-slate-600 pb-3 flex items-center gap-2">
-                                    <i class="fa-solid fa-gem text-accent-gold"></i> Prinsip
-                                </h3>
-                                <ul class="space-y-4 text-sm text-slate-200">
-                                    <li class="flex items-start gap-3">
-                                        <div class="bg-white/20 p-2 rounded-lg mt-0.5"><i class="fa-solid fa-shield-halved text-accent-gold"></i></div>
-                                        <div><strong class="text-white block mb-0.5">Integritas</strong> Mencerminkan kejujuran dan etika dalam setiap tindakan.</div>
-                                    </li>
-                                    <li class="flex items-start gap-3">
-                                        <div class="bg-white/20 p-2 rounded-lg mt-0.5"><i class="fa-solid fa-handshake text-accent-gold"></i></div>
-                                        <div><strong class="text-white block mb-0.5">Kolaborasi</strong> Membangun sinergi antar pihak untuk solusi bersama.</div>
-                                    </li>
-                                    <li class="flex items-start gap-3">
-                                        <div class="bg-white/20 p-2 rounded-lg mt-0.5"><i class="fa-solid fa-heart text-accent-gold"></i></div>
-                                        <div><strong class="text-white block mb-0.5">Pengabdian</strong> Mengorientasikan ilmu demi kesejahteraan masyarakat.</div>
-                                    </li>
-                                </ul>
-                            </div>
+                        <!-- Tabel Data Diri yang Dirapikan -->
+                        <div class="bg-white p-8 border border-zinc-100 shadow-sm rounded-sm">
+                            <table class="w-full text-sm text-zinc-600">
+                                <tbody>
+                                    <tr class="border-b border-zinc-50">
+                                        <td class="py-3 font-medium text-zinc-500 w-[45%]">Nama Panggilan</td>
+                                        <td class="py-3 font-semibold text-brand-darker">: Piyan</td>
+                                    </tr>
+                                    <tr class="border-b border-zinc-50">
+                                        <td class="py-3 font-medium text-zinc-500">Suku / Latar Belakang</td>
+                                        <td class="py-3 font-semibold text-brand-darker">: Sunda & Jawa</td>
+                                    </tr>
+                                    <tr class="border-b border-zinc-50">
+                                        <td class="py-3 font-medium text-zinc-500">Domisili</td>
+                                        <td class="py-3 font-semibold text-brand-darker">: Lampung Selatan</td>
+                                    </tr>
+                                    <tr class="border-b border-zinc-50">
+                                        <td class="py-3 font-medium text-zinc-500">Agama</td>
+                                        <td class="py-3 font-semibold text-brand-darker">: Islam</td>
+                                    </tr>
+                                    <tr class="border-b border-zinc-50">
+                                        <td class="py-3 font-medium text-zinc-500">Status</td>
+                                        <td class="py-3 font-semibold text-brand-darker">: Belum Menikah</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-3 font-medium text-zinc-500">Zodiak</td>
+                                        <td class="py-3 font-semibold text-brand-darker">: Aquarius</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-
                     </div>
+                    
+                    <div class="lg:col-span-7 text-zinc-600 space-y-6 text-lg font-light leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-2xl font-serif text-brand-darker leading-snug mb-8">
+                            "Membangun tata kelola publik bukan sekadar menjalankan administrasi, melainkan memastikan kebijakan hadir dan berdampak nyata bagi masyarakat."
+                        </p>
+                        <p>
+                            Sopiyan adalah seorang akademisi dan praktisi muda yang berdomisili di Kabupaten Lampung Selatan. Latar belakang saya berakar kuat pada sektor publik, dibuktikan melalui studi ganda yang saat ini ia tempuh dalam disiplin <strong>Ilmu Pemerintahan</strong> dan <strong>Administrasi Publik</strong>.
+                        </p>
+                        <p>
+                            Sebagai bentuk dedikasi keilmuan, Sopiyan terlibat secara aktif dalam dinamika kepemimpinan mahasiswa serta kepanitiaan strategis penyelenggaraan pemilihan umum di tingkat daerah. Fokus utama Sopiyan terletak pada implementasi <em>good governance</em>, perbaikan sistem birokrasi, dan pemberdayaan masyarakat desa.
+                        </p>
+                        <p>
+                            Prinsip kepemimpinan Sopiyan terangkum dalam filosofi <strong class="text-brand-gold">Vidya, Seva, Nayatva</strong>—sebuah komitmen bahwa ilmu pengetahuan (Vidya) harus bermuara pada pengabdian (Seva) melalui kepemimpinan yang berintegritas (Nayatva).
+                        </p>
+                    </div>
+
                 </div>
             </div>
         </section>
 
         <!-- PENDIDIKAN -->
-        <section id="pendidikan" class="py-24 bg-slate-50 relative border-y border-slate-200 overflow-hidden">
-            <div class="absolute top-0 right-0 w-full h-full bg-grid-pattern opacity-20"></div>
-            
-            <div class="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
-                <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-                    <span class="text-accent-blue font-bold tracking-widest text-sm uppercase mb-2 block">Latar Belakang</span>
-                    <h2 class="font-serif text-3xl md:text-5xl font-bold text-navy mb-4">Akademik</h2>
-                    <div class="w-20 h-1.5 bg-gradient-to-r from-accent-blue to-accent-teal rounded-full mx-auto mb-6"></div>
-                    <p class="text-slate-600">Pondasi keilmuan yang kuat sebagai landasan dalam menganalisis dan merumuskan kebijakan publik yang berdampak nyata.</p>
+        <section id="pendidikan" class="py-32 bg-white border-y border-zinc-100 bg-grid">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-20" data-aos="fade-up">
+                    <span class="text-zinc-500 font-semibold tracking-widest text-xs uppercase mb-2 block">Latar Belakang Akademik</span>
+                    <h2 class="font-serif text-4xl text-brand-darker font-bold">Pendidikan</h2>
+                    <div class="w-12 h-1 bg-brand-gold mx-auto mt-6"></div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                    <!-- UT -->
-                    <div class="glass-panel p-8 rounded-3xl flex flex-col sm:flex-row gap-6 items-start hover-glow relative overflow-hidden group" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="absolute -right-10 -top-10 w-40 h-40 bg-yellow-100 rounded-full blur-2xl group-hover:bg-yellow-200 transition-colors -z-10"></div>
-                        <div class="flex-shrink-0 w-20 h-20 bg-white rounded-2xl flex items-center justify-center border border-slate-100 shadow-lg p-2 z-10">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Logo_Universitas_Terbuka.MP4.png" alt="Logo UT" class="w-full h-full object-contain">
-                        </div>
-                        <div class="z-10">
-                            <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-yellow-100 text-yellow-700 border-yellow-300 text-xs font-bold rounded-lg mb-3 uppercase tracking-wide border">
-                                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Mahasiswa Aktif S1
+                    <!-- Universitas Terbuka -->
+                    <div class="bg-brand-light border border-zinc-100 p-10 hover-lift relative overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-brand-gold transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                        <div class="flex flex-col sm:flex-row gap-6 items-start">
+                            <div class="w-16 h-16 bg-white p-2 rounded-sm shadow-sm border border-zinc-100 shrink-0">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Logo_Universitas_Terbuka.MP4.png" alt="UT" class="w-full h-full object-contain grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all">
                             </div>
-                            <h3 class="text-xl font-bold text-navy mb-2">Ilmu Pemerintahan (RPL)</h3>
-                            <p class="text-slate-700 font-semibold mb-2">
-                                <a href="https://www.ut.ac.id" target="_blank" class="text-accent-blue transition-colors">Universitas Terbuka</a> <span class="text-slate-700">(UT)</span>
-                            </p>
-                            <p class="text-sm text-slate-500 leading-relaxed bg-white/50 px-3 py-2 rounded-lg border border-slate-100">
-                                Fakultas Hukum Ilmu Sosial Dan Ilmu Politik
-                            </p>
+                            <div>
+                                <span class="inline-block px-2 py-1 bg-zinc-100 text-zinc-600 text-xs font-semibold tracking-wider uppercase mb-3 rounded-sm">Mahasiswa Aktif</span>
+                                <h3 class="font-serif text-xl font-bold text-brand-darker mb-1">S1 Ilmu Pemerintahan (RPL)</h3>
+                                <p class="text-brand-gold font-medium mb-3">Universitas Terbuka (UT)</p>
+                                <p class="text-sm text-zinc-500 font-light">Fakultas Hukum Ilmu Sosial Dan Ilmu Politik</p>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- UIM -->
-                    <div class="glass-panel p-8 rounded-3xl flex flex-col sm:flex-row gap-6 items-start hover-glow relative overflow-hidden group" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="absolute -right-10 -top-10 w-40 h-40 bg-blue-900/30 rounded-full blur-2xl group-hover:bg-blue-900/40 transition-colors -z-10"></div>
-                        <div class="flex-shrink-0 w-20 h-20 bg-white rounded-2xl flex items-center justify-center border border-slate-100 shadow-lg p-2 z-10">
-                            <img src="https://uimandiri.ac.id/assets/logo/logoutamauim.png" alt="Logo UIM" class="w-full h-full object-contain">
-                        </div>
-                        <div class="z-10">
-                            <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-navy text-white border-navy text-xs font-bold rounded-lg mb-3 uppercase tracking-wide border shadow-sm">
-                                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Mahasiswa Aktif S1
+                    <!-- Universitas Indonesia Mandiri -->
+                    <div class="bg-brand-light border border-zinc-100 p-10 hover-lift relative overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-brand-gold transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                        <div class="flex flex-col sm:flex-row gap-6 items-start">
+                            <div class="w-16 h-16 bg-white p-2 rounded-sm shadow-sm border border-zinc-100 shrink-0">
+                                <img src="https://uimandiri.ac.id/assets/logo/logoutamauim.png" alt="UIM" class="w-full h-full object-contain grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all">
                             </div>
-                            <h3 class="text-xl font-bold text-navy mb-2">Administrasi Publik (Non Reguler)</h3>
-                            <p class="text-slate-700 font-semibold mb-2">
-                                <a href="https://uimandiri.ac.id" target="_blank" class="text-accent-blue transition-colors">Universitas Indonesia Mandiri</a> <span class="text-slate-700">(UIM)</span>
-                            </p>
-                            <p class="text-sm text-slate-500 leading-relaxed bg-white/50 px-3 py-2 rounded-lg border border-slate-100">
-                                Fakultas Sosial dan Humaniora
-                            </p>
+                            <div>
+                                <span class="inline-block px-2 py-1 bg-zinc-100 text-zinc-600 text-xs font-semibold tracking-wider uppercase mb-3 rounded-sm">Mahasiswa Aktif</span>
+                                <h3 class="font-serif text-xl font-bold text-brand-darker mb-1">S1 Administrasi Publik (Non Reguler)</h3>
+                                <p class="text-brand-gold font-medium mb-3">Universitas Indonesia Mandiri (UIM)</p>
+                                <p class="text-sm text-zinc-500 font-light">Fakultas Sosial dan Humaniora</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- PENGALAMAN LAIN -->
-        <section id="pengalaman" class="py-24 bg-white relative">
-            <div class="max-w-6xl mx-auto px-6 lg:px-8">
-                <div class="flex flex-col lg:flex-row gap-16 items-start">
+        <!-- PENGALAMAN -->
+        <section id="pengalaman" class="py-32 bg-brand-light">
+            <div class="max-w-4xl mx-auto px-6 lg:px-8">
+                <div class="mb-20" data-aos="fade-up">
+                    <span class="text-zinc-500 font-semibold tracking-widest text-xs uppercase mb-2 block">Rekam Jejak Profesi & Organisasi</span>
+                    <h2 class="font-serif text-4xl text-brand-darker font-bold">Pengalaman</h2>
+                    <div class="w-12 h-1 bg-brand-gold mt-6"></div>
+                </div>
+
+                <div class="relative border-l border-zinc-200 ml-3 md:ml-0 space-y-12">
                     
-                    <div class="w-full lg:w-1/3 lg:sticky lg:top-32" data-aos="fade-right">
-                        <span class="text-accent-blue font-bold tracking-widest text-sm uppercase mb-2 block">Rekam Jejak</span>
-                        <h2 class="font-serif text-3xl md:text-5xl font-bold text-navy mb-4">Pengalaman</h2>
-                        <div class="w-20 h-1.5 bg-gradient-to-r from-accent-blue via-accent-teal to-transparent rounded-full mb-6"></div>
-                        <p class="text-slate-500 mb-8 leading-relaxed text-lg">Dedikasi, kepemimpinan, dan partisipasi aktif dalam berbagai organisasi kemahasiswaan serta kepanitiaan di masyarakat.</p>
-                        
-                        <div class="hidden lg:flex w-48 h-48 bg-slate-50 rounded-full border border-slate-100 relative mt-12 items-center justify-center shadow-sm">
-                            <div class="absolute inset-4 border border-dashed border-slate-300 rounded-full animate-[spin_30s_linear_infinite]"></div>
-                            <img src="https://i.ibb.co.com/BVmbzyR0/logo.png" alt="Logo Sopiyan" class="w-28 h-auto object-contain drop-shadow-md z-10 relative">
+                    <!-- Experience Item -->
+                    <div class="relative pl-8 md:pl-12" data-aos="fade-up" data-aos-delay="100">
+                        <div class="timeline-dot"></div>
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2 gap-2">
+                            <h3 class="text-xl font-bold text-brand-darker">Ketua Organisasi Mahasiswa (Ormawa)</h3>
+                            <span class="text-brand-gold font-semibold text-sm shrink-0">2026 – 2027</span>
                         </div>
+                        <p class="text-zinc-600 font-medium mb-2">Universitas Terbuka Salut Kalianda</p>
+                        <p class="text-sm text-zinc-500 font-light">Memimpin arah kebijakan dan program strategis organisasi kemahasiswaan untuk meningkatkan kapasitas intelektual dan pengabdian mahasiswa.</p>
                     </div>
 
-                    <div class="w-full lg:w-2/3">
-                        <div class="relative border-l-2 border-slate-100 ml-3 md:ml-0 space-y-8">
-                            
-                            <!-- Item 1 -->
-                            <div class="relative pl-8 md:pl-10" data-aos="fade-up" data-aos-delay="100">
-                                <div class="absolute left-[-9px] top-1 w-4 h-4 rounded-full bg-accent-blue ring-4 ring-white"></div>
-                                <div class="glass-panel bg-gradient-to-r from-white to-blue-50/30 p-6 rounded-2xl hover-glow border-l-4 border-l-accent-blue">
-                                    <div class="flex justify-between items-start flex-wrap gap-3">
-                                        <div>
-                                            <h3 class="font-bold text-navy text-xl mb-1">Ketua Ormawa</h3>
-                                            <p class="text-slate-600 font-medium">Organisasi Mahasiswa Universitas Terbuka Salut Kalianda</p>
-                                        </div>
-                                        <div class="inline-flex items-center text-xs font-bold text-white bg-accent-blue px-3 py-1.5 rounded-lg shadow-sm">
-                                            <i class="fa-regular fa-calendar mr-2"></i> 2026-2027
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Item 2 -->
-                            <div class="relative pl-8 md:pl-10" data-aos="fade-up" data-aos-delay="150">
-                                <div class="absolute left-[-9px] top-1 w-4 h-4 rounded-full bg-accent-teal ring-4 ring-white"></div>
-                                <div class="glass-panel bg-gradient-to-r from-white to-teal-50/30 p-6 rounded-2xl hover-glow border-l-4 border-l-accent-teal">
-                                    <div class="flex justify-between items-start flex-wrap gap-3">
-                                        <div>
-                                            <h3 class="font-bold text-navy text-xl mb-1">Ketua Kelompok Penyelenggara Pemungutan Suara (KPPS)</h3>
-                                            <p class="text-slate-600 font-medium">Pilkada Serentak</p>
-                                        </div>
-                                        <div class="inline-flex items-center text-xs font-bold text-accent-teal bg-teal-50 px-3 py-1.5 rounded-lg border border-teal-200">
-                                            <i class="fa-regular fa-calendar mr-2"></i> 2025
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Item 3 & 4 -->
-                            <div class="relative pl-8 md:pl-10 grid grid-cols-1 md:grid-cols-2 gap-6" data-aos="fade-up" data-aos-delay="200">
-                                <div class="absolute left-[-9px] top-1 w-4 h-4 rounded-full bg-slate-300 ring-4 ring-white"></div>
-                                
-                                <div class="glass-panel p-5 rounded-2xl hover-glow border border-slate-100">
-                                    <div class="text-xs font-bold text-slate-500 mb-2 flex items-center gap-2"><i class="fa-solid fa-clock text-accent-gold"></i> 2025</div>
-                                    <h3 class="font-bold text-navy text-lg leading-tight mb-1">Petugas Pemutakhiran Data Pemilih</h3>
-                                    <p class="text-slate-500 text-sm">Pilkada Serentak</p>
-                                </div>
-
-                                <div class="glass-panel p-5 rounded-2xl hover-glow border border-slate-100">
-                                    <div class="text-xs font-bold text-slate-500 mb-2 flex items-center gap-2"><i class="fa-solid fa-clock text-indigo-500"></i> 2025</div>
-                                    <h3 class="font-bold text-navy text-lg leading-tight mb-1">Pelatihan BPBD Pasti II</h3>
-                                    <p class="text-slate-500 text-sm">Badan Penanggulangan Bencana Daerah Kabupaten Lampung Selatan</p>
-                                </div>
-                            </div>
-
-                            <!-- Item 5, 6, 7 -->
-                            <div class="relative pl-8 md:pl-10 pt-4" data-aos="fade-up" data-aos-delay="250">
-                                <div class="absolute left-[-9px] top-5 w-4 h-4 rounded-full bg-slate-300 ring-4 ring-white"></div>
-                                
-                                <div class="bg-slate-50 border border-slate-100 rounded-2xl p-6">
-                                    <h4 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4 border-b border-slate-200 pb-2">Tahun 2024</h4>
-                                    <div class="space-y-4">
-                                        <div class="flex items-start gap-4 group cursor-default">
-                                            <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm group-hover:bg-accent-gold group-hover:text-white transition-colors text-accent-gold"><i class="fa-solid fa-users"></i></div>
-                                            <div>
-                                                <h3 class="font-bold text-navy">Petugas Pemutakhiran Data Pemilih</h3>
-                                                <p class="text-sm text-slate-500">Pemilu Serentak</p>
-                                            </div>
-                                        </div>
-                                        <div class="flex items-start gap-4 group cursor-default">
-                                            <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm group-hover:bg-accent-teal group-hover:text-white transition-colors text-accent-teal"><i class="fa-solid fa-check-to-slot"></i></div>
-                                            <div>
-                                                <h3 class="font-bold text-navy">Anggota Kelompok Penyelenggara Pemungutan Suara (KPPS)</h3>
-                                                <p class="text-sm text-slate-500">Pemilu Serentak</p>
-                                            </div>
-                                        </div>
-                                        <div class="flex items-start gap-4 group cursor-default">
-                                            <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm group-hover:bg-indigo-500 group-hover:text-white transition-colors text-indigo-500"><i class="fa-solid fa-truck-medical"></i></div>
-                                            <div>
-                                                <h3 class="font-bold text-navy">Pelatihan BPBD Pasti II</h3>
-                                                <p class="text-sm text-slate-500">Badan Penanggulangan Bencana Daerah Kabupaten Lampung Selatan</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
+                    <!-- Experience Item -->
+                    <div class="relative pl-8 md:pl-12" data-aos="fade-up" data-aos-delay="200">
+                        <div class="timeline-dot"></div>
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2 gap-2">
+                            <h3 class="text-xl font-bold text-brand-darker">Ketua Kelompok Penyelenggara Pemungutan Suara (KPPS)</h3>
+                            <span class="text-brand-gold font-semibold text-sm shrink-0">2025</span>
                         </div>
+                        <p class="text-zinc-600 font-medium mb-2">Pilkada Serentak</p>
+                        <p class="text-sm text-zinc-500 font-light">Menjamin kelancaran, transparansi, dan integritas pelaksanaan pemungutan suara di tingkat TPS demi terwujudnya pemilihan yang demokratis.</p>
                     </div>
+
+                    <!-- Experience Item -->
+                    <div class="relative pl-8 md:pl-12" data-aos="fade-up" data-aos-delay="300">
+                        <div class="timeline-dot"></div>
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2 gap-2">
+                            <h3 class="text-xl font-bold text-brand-darker">Petugas Pemutakhiran Data Pemilih (Pantarlih)</h3>
+                            <span class="text-brand-gold font-semibold text-sm shrink-0">2024 & 2025</span>
+                        </div>
+                        <p class="text-zinc-600 font-medium mb-2">Pemilu & Pilkada Serentak</p>
+                        <p class="text-sm text-zinc-500 font-light">Melakukan verifikasi dan validasi data pemilih secara faktual untuk memastikan akurasi daftar pemilih.</p>
+                    </div>
+
+                    <!-- Experience Item -->
+                    <div class="relative pl-8 md:pl-12" data-aos="fade-up" data-aos-delay="400">
+                        <div class="timeline-dot"></div>
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2 gap-2">
+                            <h3 class="text-xl font-bold text-brand-darker">Anggota KPPS & Peserta Pelatihan Bencana</h3>
+                            <span class="text-brand-gold font-semibold text-sm shrink-0">2024 – 2025</span>
+                        </div>
+                        <p class="text-zinc-600 font-medium mb-2">Pemilu 2024 & BPBD Lampung Selatan</p>
+                        <p class="text-sm text-zinc-500 font-light">Anggota KPPS Pemilu 2024 dan tersertifikasi dalam Pelatihan Penanggulangan Bencana Pasti II yang diselenggarakan oleh BPBD.</p>
+                    </div>
+
                 </div>
             </div>
         </section>
 
         <!-- FOKUS & MINAT -->
-        <section id="fokus" class="py-24 bg-slate-900 text-white relative overflow-hidden">
-            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+CjxjaXJjbGUgY3g9IjIiIGN5PSIyIiByPSIxIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDUpIi8+Cjwvc3ZnPg==')] opacity-50"></div>
-            
-            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-blue rounded-full blur-[120px] opacity-20 -translate-y-1/2 translate-x-1/3"></div>
-            <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent-teal rounded-full blur-[120px] opacity-20 translate-y-1/3 -translate-x-1/3"></div>
-            
-            <div class="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
-                <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
-                    <span class="text-accent-blue font-bold tracking-widest text-sm uppercase mb-2 block">Area Keahlian</span>
-                    <h2 class="font-serif text-3xl md:text-5xl font-bold text-white mb-4">Fokus & Minat</h2>
-                    <div class="w-20 h-1.5 bg-gradient-to-r from-accent-blue to-accent-teal rounded-full mx-auto mb-6"></div>
-                    <p class="text-slate-300 text-lg">Area kepakaran utama dalam ranah tata kelola publik dan pemerintahan.</p>
+        <section id="fokus" class="py-32 bg-brand-dark text-white relative">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-20" data-aos="fade-up">
+                    <span class="text-brand-gold font-semibold tracking-widest text-xs uppercase mb-2 block">Area Keahlian</span>
+                    <h2 class="font-serif text-4xl font-bold">Fokus & Minat</h2>
+                    <div class="w-12 h-1 bg-brand-gold mx-auto mt-6"></div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-all duration-300 group hover:-translate-y-2 hover:shadow-[0_10px_40px_-10px_rgba(37,99,235,0.3)]" data-aos="fade-up" data-aos-delay="100">
-                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mb-6 shadow-lg transform group-hover:rotate-12 transition-transform duration-300">
-                            <i class="fa-solid fa-landmark text-2xl text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Tata Kelola Publik</h3>
-                        <p class="text-sm text-slate-300 leading-relaxed">
-                            Mendukung sistem pemerintahan transparan, bersih, serta memegang teguh akuntabilitas pengelolaan sumber daya.
-                        </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Item -->
+                    <div class="border border-zinc-800 p-8 hover:border-brand-gold transition-colors duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fa-solid fa-landmark text-3xl text-zinc-600 group-hover:text-brand-gold transition-colors mb-6 block"></i>
+                        <h3 class="text-xl font-serif font-bold mb-3">Tata Kelola Publik</h3>
+                        <p class="text-zinc-400 text-sm font-light leading-relaxed">Analisis dan penerapan sistem pemerintahan yang transparan, akuntabel, dan bebas dari praktik maladministrasi.</p>
                     </div>
                     
-                    <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-all duration-300 group hover:-translate-y-2 hover:shadow-[0_10px_40px_-10px_rgba(15,118,110,0.3)]" data-aos="fade-up" data-aos-delay="200">
-                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-teal-500 to-teal-600 flex items-center justify-center mb-6 shadow-lg transform group-hover:rotate-12 transition-transform duration-300">
-                            <i class="fa-solid fa-users-gear text-2xl text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Inovasi Pelayanan</h3>
-                        <p class="text-sm text-slate-300 leading-relaxed">
-                            Berfokus pada perbaikan standar pelayanan masyarakat yang responsif dan mudah diakses via teknologi.
-                        </p>
+                    <!-- Item -->
+                    <div class="border border-zinc-800 p-8 hover:border-brand-gold transition-colors duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fa-solid fa-users-gear text-3xl text-zinc-600 group-hover:text-brand-gold transition-colors mb-6 block"></i>
+                        <h3 class="text-xl font-serif font-bold mb-3">Inovasi Pelayanan</h3>
+                        <p class="text-zinc-400 text-sm font-light leading-relaxed">Modernisasi standar operasional pelayanan masyarakat agar lebih responsif, cepat, dan mudah diakses.</p>
                     </div>
 
-                    <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-all duration-300 group hover:-translate-y-2 hover:shadow-[0_10px_40px_-10px_rgba(217,119,6,0.3)]" data-aos="fade-up" data-aos-delay="300">
-                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center mb-6 shadow-lg transform group-hover:rotate-12 transition-transform duration-300">
-                            <i class="fa-solid fa-tree-city text-2xl text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Pembangunan Desa</h3>
-                        <p class="text-sm text-slate-300 leading-relaxed">
-                            Menganalisis potensi lokal dan pemberdayaan masyarakat untuk menciptakan desa yang mandiri dan sejahtera.
-                        </p>
+                    <!-- Item -->
+                    <div class="border border-zinc-800 p-8 hover:border-brand-gold transition-colors duration-300 group" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fa-solid fa-tree-city text-3xl text-zinc-600 group-hover:text-brand-gold transition-colors mb-6 block"></i>
+                        <h3 class="text-xl font-serif font-bold mb-3">Pembangunan Desa</h3>
+                        <p class="text-zinc-400 text-sm font-light leading-relaxed">Strategi pemberdayaan ekonomi lokal dan optimalisasi potensi daerah untuk mewujudkan desa yang berdaulat.</p>
                     </div>
 
-                    <div class="bg-white/5 backdrop-blur-xl border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-all duration-300 group hover:-translate-y-2 hover:shadow-[0_10px_40px_-10px_rgba(99,102,241,0.3)]" data-aos="fade-up" data-aos-delay="400">
-                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center mb-6 shadow-lg transform group-hover:rotate-12 transition-transform duration-300">
-                            <i class="fa-solid fa-handshake-angle text-2xl text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Partisipasi Masyarakat</h3>
-                        <p class="text-sm text-slate-300 leading-relaxed">
-                            Mendorong keterlibatan aktif masyarakat dalam proses perencanaan, pelaksanaan, dan pengawasan.
-                        </p>
+                    <!-- Item -->
+                    <div class="border border-zinc-800 p-8 hover:border-brand-gold transition-colors duration-300 group" data-aos="fade-up" data-aos-delay="400">
+                        <i class="fa-solid fa-sitemap text-3xl text-zinc-600 group-hover:text-brand-gold transition-colors mb-6 block"></i>
+                        <h3 class="text-xl font-serif font-bold mb-3">Studi Pemerintahan</h3>
+                        <p class="text-zinc-400 text-sm font-light leading-relaxed">Kajian komprehensif terkait kebijakan publik, desentralisasi, dan dinamika politik lokal di Indonesia.</p>
                     </div>
-                </div>
 
-                <div class="mt-12 flex flex-wrap justify-center gap-3" data-aos="fade-up" data-aos-delay="500">
-                    <span class="px-5 py-2.5 bg-white/10 backdrop-blur-md text-white font-medium text-sm rounded-full border border-white/20">Kebijakan Publik</span>
-                    <span class="px-5 py-2.5 bg-white/10 backdrop-blur-md text-white font-medium text-sm rounded-full border border-white/20">Pelayanan Prima</span>
-                    <span class="px-5 py-2.5 bg-white/10 backdrop-blur-md text-white font-medium text-sm rounded-full border border-white/20">Pemberdayaan Masyarakat</span>
-                    <span class="px-5 py-2.5 bg-white/10 backdrop-blur-md text-white font-medium text-sm rounded-full border border-white/20">Akuntabilitas Publik</span>
+                    <!-- Item -->
+                    <div class="border border-zinc-800 p-8 hover:border-brand-gold transition-colors duration-300 group" data-aos="fade-up" data-aos-delay="500">
+                        <i class="fa-solid fa-chess-knight text-3xl text-zinc-600 group-hover:text-brand-gold transition-colors mb-6 block"></i>
+                        <h3 class="text-xl font-serif font-bold mb-3">Kepemimpinan</h3>
+                        <p class="text-zinc-400 text-sm font-light leading-relaxed">Pengembangan karakter kepemimpinan adaptif dalam mengelola organisasi dan menyelesaikan konflik di ruang publik.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="border border-zinc-800 p-8 hover:border-brand-gold transition-colors duration-300 group" data-aos="fade-up" data-aos-delay="600">
+                        <i class="fa-solid fa-handshake-angle text-3xl text-zinc-600 group-hover:text-brand-gold transition-colors mb-6 block"></i>
+                        <h3 class="text-xl font-serif font-bold mb-3">Partisipasi Masyarakat</h3>
+                        <p class="text-zinc-400 text-sm font-light leading-relaxed">Mendorong ruang kolaborasi antara pemerintah dan masyarakat warga (civil society) dalam perumusan kebijakan.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- KONTAK & CALL TO ACTION -->
-        <section id="kontak" class="py-24 bg-animated-gradient relative overflow-hidden">
-            <div class="max-w-4xl mx-auto px-6 lg:px-8 relative z-10 text-center">
-                <div class="inline-block p-4 rounded-full bg-white shadow-xl mb-8" data-aos="zoom-in">
-                    <i class="fa-regular fa-paper-plane text-4xl text-accent-blue"></i>
-                </div>
-                
-                <h2 class="font-serif text-3xl md:text-5xl font-bold text-navy mb-6" data-aos="fade-up">Mari Terhubung & Berkolaborasi</h2>
-                <p class="text-slate-600 text-lg mb-12 max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
-                    Sopiyan selalu terbuka untuk diskusi mengenai tata kelola pemerintahan, kebijakan publik, dan peluang kerja sama untuk membangun masyarakat yang lebih baik.
+        <!-- PUBLIKASI (Placeholder Elegan) -->
+        <section id="publikasi" class="py-24 bg-zinc-50 border-y border-zinc-200">
+            <div class="max-w-4xl mx-auto px-6 text-center" data-aos="fade-up">
+                <i class="fa-solid fa-book-open text-3xl text-zinc-300 mb-6"></i>
+                <h2 class="font-serif text-2xl font-bold text-brand-darker mb-4">Pemikiran & Publikasi</h2>
+                <p class="text-zinc-500 font-light mb-8">Ruang kajian akademis, opini, dan esai terkait tata kelola pemerintahan saat ini sedang dalam tahap penyusunan.</p>
+                <div class="inline-block px-6 py-2 border border-zinc-300 text-xs font-semibold uppercase tracking-widest text-zinc-400 rounded-sm">Segera Hadir!</div>
+            </div>
+        </section>
+
+        <!-- KONTAK -->
+        <section id="kontak" class="py-32 bg-white relative">
+            <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center" data-aos="zoom-in">
+                <span class="text-zinc-500 font-semibold tracking-widest text-xs uppercase mb-2 block">Kolaborasi</span>
+                <h2 class="font-serif text-4xl text-brand-darker font-bold mb-8">Mari Terhubung</h2>
+                <p class="text-zinc-600 mb-12 max-w-xl mx-auto font-light text-lg">
+                    Terbuka untuk diskusi akademis, peluang kerja sama strategis, maupun pembicaraan terkait tata kelola pemerintahan dan organisasi.
                 </p>
                 
-                <div class="flex flex-col sm:flex-row gap-5 justify-center" data-aos="fade-up" data-aos-delay="200">
-                    <a href="https://wa.me/6283183149680" target="_blank" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white font-bold rounded-xl hover:shadow-[0_10px_25px_-5px_rgba(37,211,102,0.4)] transition-all hover:-translate-y-1 text-lg">
-                        <i class="fa-brands fa-whatsapp text-2xl"></i> Chat via WhatsApp
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://wa.me/6283183149680" target="_blank" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-brand-dark text-white font-semibold hover:bg-brand-gold transition-colors duration-300 rounded-sm">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Hubungi Via WhatsApp
                     </a>
-                    
-                    <a href="mailto:sopiyan.go.id@gmail.com" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-navy font-bold rounded-xl border border-slate-200 hover:border-accent-blue hover:text-accent-blue transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 text-lg">
-                        <i class="fa-solid fa-envelope text-xl"></i> Kirim Email
+                    <a href="mailto:sopiyan.go.id@gmail.com" class="inline-flex items-center justify-center gap-3 px-8 py-4 border border-zinc-300 text-brand-darker font-semibold hover:border-brand-dark transition-colors duration-300 rounded-sm">
+                        <i class="fa-regular fa-envelope text-lg"></i> Kirim Email 
                     </a>
                 </div>
             </div>
@@ -553,56 +473,112 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-[#0a1120] border-t border-slate-800 py-12 text-center relative z-10">
-        <div class="max-w-6xl mx-auto px-6">
+    <footer class="bg-brand-dark text-zinc-400 py-16 border-t border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col items-center">
             
-            <!-- URUTAN TAUTAN: WIKIPEDIA, LINKEDIN, INSTAGRAM, TIKTOK -->
-            <div class="flex justify-center gap-6 mb-10">
-                <!-- 1. Wikipedia -->
-                <a href="https://id.wikipedia.org/wiki/Pengguna:Sopiyan.go.id" target="_blank" rel="noopener noreferrer" title="Wikipedia" class="w-14 h-14 rounded-2xl bg-slate-800/50 text-slate-400 flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_20px_-10px_rgba(255,255,255,0.3)]">
-                    <i class="fa-brands fa-wikipedia-w text-xl"></i>
-                </a>
+            <a href="#beranda" class="mb-8">
+                <img src="https://i.ibb.co.com/BVmbzyR0/logo.png" alt="Sopiyan" class="h-10 opacity-70 hover:opacity-100 transition-opacity">
+            </a>
 
-                <!-- 2. LinkedIn -->
-                <a href="https://www.linkedin.com/in/sopiyan-go-id/" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="w-14 h-14 rounded-2xl bg-slate-800/50 text-slate-400 flex items-center justify-center hover:bg-[#0A66C2] hover:text-white transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_20px_-10px_rgba(10,102,194,0.5)]">
-                    <i class="fa-brands fa-linkedin-in text-xl"></i>
+            <!-- Social Links -->
+            <div class="flex gap-6 mb-10">
+                <a href="https://www.linkedin.com/in/sopiyan-go-id/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 border border-zinc-800 flex items-center justify-center rounded-sm hover:border-brand-gold hover:text-brand-gold transition-colors" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
                 </a>
-                
-                <!-- 3. Instagram -->
-                <a href="https://www.instagram.com/iam.sopiyan" target="_blank" rel="noopener noreferrer" title="Instagram" class="w-14 h-14 rounded-2xl bg-slate-800/50 text-slate-400 flex items-center justify-center hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-pink-500 hover:to-purple-600 hover:text-white transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_20px_-10px_rgba(225,48,108,0.5)]">
-                    <i class="fa-brands fa-instagram text-xl"></i>
+                <a href="https://www.instagram.com/iam.sopiyan" target="_blank" rel="noopener noreferrer" class="w-10 h-10 border border-zinc-800 flex items-center justify-center rounded-sm hover:border-brand-gold hover:text-brand-gold transition-colors" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
                 </a>
-
-                <!-- 4. TikTok -->
-                <a href="https://www.tiktok.com/@hai.sopiyan" target="_blank" rel="noopener noreferrer" title="TikTok" class="w-14 h-14 rounded-2xl bg-slate-800/50 text-slate-400 flex items-center justify-center hover:bg-[#00f2fe] hover:text-black transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_10px_20px_-10px_rgba(0,242,254,0.3)]">
-                    <i class="fa-brands fa-tiktok text-xl"></i>
+                <a href="https://www.tiktok.com/@hai.sopiyan" target="_blank" rel="noopener noreferrer" class="w-10 h-10 border border-zinc-800 flex items-center justify-center rounded-sm hover:border-brand-gold hover:text-brand-gold transition-colors" aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a href="https://id.wikipedia.org/wiki/Pengguna:Sopiyan.go.id" target="_blank" rel="noopener noreferrer" class="w-10 h-10 border border-zinc-800 flex items-center justify-center rounded-sm hover:border-brand-gold hover:text-brand-gold transition-colors" aria-label="Wikipedia">
+                    <i class="fa-brands fa-wikipedia-w"></i>
                 </a>
             </div>
             
-            <p class="text-slate-600 text-xs font-medium">
-                &copy; <span id="year"></span> SOPIYAN · HAK CIPTA DILINDUNGI UNDANG-UNDANG.
+            <p class="text-xs tracking-wider uppercase font-semibold text-zinc-600 mb-2">Public Governance & Social Development</p>
+            <p class="text-xs text-zinc-600">
+                &copy; <span id="year"></span> SOPIYAN. All rights reserved.
             </p>
         </div>
     </footer>
 
-    <!-- SCRIPT -->
-
-    <!-- AOS Script -->
+    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Inisialisasi AOS (Animasi)
         AOS.init({
             once: true,
-            offset: 50,
+            offset: 30,
+            duration: 800,
+            easing: 'ease-out-cubic',
         });
 
+        // Update Tahun Copyright
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        const btn = document.getElementById('mobile-menu-btn');
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg', 'border-white/10');
+            } else {
+                navbar.classList.remove('shadow-lg', 'border-white/10');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-btn');
         const menu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
         
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
         });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+        
+        // Structured Data Schema (SEO)
+        const schemaData = {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Sopiyan",
+            "alternateName": "Piyan",
+            "url": "https://sopiyan-go-id.github.io",
+            "image": "https://cdn.phototourl.com/member/2026-10-25-c2525906-e5d8-4a15-b314-a14c5eb94846.jpg",
+            "jobTitle": "Ketua Ormawa",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "Universitas Terbuka Salut Kalianda"
+            },
+            "alumniOf": [
+                {
+                    "@type": "CollegeOrUniversity",
+                    "name": "Universitas Terbuka",
+                    "department": "Ilmu Pemerintahan"
+                },
+                {
+                    "@type": "CollegeOrUniversity",
+                    "name": "Universitas Indonesia Mandiri",
+                    "department": "Administrasi Publik"
+                }
+            ],
+            "sameAs": [
+                "https://www.linkedin.com/in/sopiyan-go-id/",
+                "https://www.instagram.com/iam.sopiyan",
+                "https://www.tiktok.com/@hai.sopiyan",
+                "https://id.wikipedia.org/wiki/Pengguna:Sopiyan.go.id"
+            ]
+        };
+        
+        const script = document.createElement('script');
+        script.type = "application/ld+json";
+        script.text = JSON.stringify(schemaData);
+        document.head.appendChild(script);
     </script>
 </body>
 </html>
