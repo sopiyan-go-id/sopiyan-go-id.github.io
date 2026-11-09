@@ -665,11 +665,12 @@
     </div>
 </div>
 
-<!-- SKRIP INTEGRASI CMS DENGAN FOTO UTuh (TIDAK TERPOTONG) -->
+<!-- SKRIP INTEGRASI CMS OTOMATIS (ANTI-CACHE) -->
 <script>
 document.addEventListener("DOMContentLoaded", async () => {
     try {
-        const response = await fetch('./data/berita.json');
+        // Menggunakan parameter waktu agar data terbaru dari admin langsung terbaca tanpa cache
+        const response = await fetch('./data/berita.json?t=' + new Date().getTime());
         if (!response.ok) return; 
         
         const data = await response.json();
@@ -699,7 +700,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     } catch (error) { console.log("Menunggu konten dari CMS..."); }
 });
 
-// Fungsi untuk Membuka Modal Berita dengan Foto Utuh Proporsional
+// Fungsi untuk Membuka Modal Berita
 function bukaModalBerita(item) {
     const modal = document.getElementById('modal-berita');
     const content = document.getElementById('modal-content');
@@ -718,7 +719,6 @@ function bukaModalBerita(item) {
             <span><i class="fa-regular fa-calendar mr-1"></i> ${tanggalFormatted}</span>
             <span><i class="fa-solid fa-location-dot mr-1"></i> ${item.lokasi}</span>
         </div>
-        <!-- Foto tampil utuh menyesuaikan bentuk aslinya secara proporsional -->
         <img src="${item.foto.replace('/assets/', './assets/')}" alt="${item.judul}" class="w-full h-auto max-h-[500px] object-contain mb-6 border border-black/10 shadow-sm bg-black/5">
         <div class="text-brand-charcoal text-base font-light leading-relaxed space-y-4">
             ${isiFormatted}
