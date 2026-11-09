@@ -706,16 +706,23 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <div class="p-6 flex flex-col flex-grow">
                         <time class="text-[11px] text-brand-charcoalLight font-medium mb-3 block">${new Date(item.tanggal).toLocaleDateString('id-ID')}</time>
                         <h3 class="font-serif text-lg font-bold text-brand-navy leading-snug mb-3 group-hover:text-brand-gold transition-colors">
-                            <a href="#detail-${item.slug}" onclick="alert('${item.judul.replace(/'/g, "\\'")}\\n\\n${item.isi.replace(/'/g, "\\'").replace(/<[^>]*>?/gm, '')}')">${item.judul.toUpperCase()}</a>
+                            <a href="javascript:void(0);" onclick="bukaBerita('${encodeURIComponent(item.judul)}', '${encodeURIComponent(item.isi)}')">${item.judul.toUpperCase()}</a>
                         </h3>
                         <p class="text-brand-charcoal text-sm font-light leading-relaxed mb-6 flex-grow">${item.ringkasan}</p>
-                        <a href="#detail-${item.slug}" onclick="alert('${item.judul.replace(/'/g, "\\'")}\\n\\n${item.isi.replace(/'/g, "\\'").replace(/<[^>]*>?/gm, '')}')" class="text-xs font-semibold text-brand-gold hover:text-brand-navy mt-auto inline-block cursor-pointer">Baca &rarr;</a>
+                        <a href="javascript:void(0);" onclick="bukaBerita('${encodeURIComponent(item.judul)}', '${encodeURIComponent(item.isi)}')" class="text-xs font-semibold text-brand-gold hover:text-brand-navy mt-auto inline-block cursor-pointer">Baca &rarr;</a>
                     </div>
                 </article>
             `).join('');
         }
     } catch (error) { console.log("Menunggu konten dari CMS..."); }
 });
+
+// Fungsi Global untuk Membuka Detail Berita
+function bukaBerita(judulEncoded, isiEncoded) {
+    const judul = decodeURIComponent(judulEncoded);
+    const isi = decodeURIComponent(isiEncoded).replace(/<[^>]*>?/gm, '');
+    alert(judul + "\n\n----------------------------------------\n\n" + isi);
+}
 </script>
 </body>
 </html>
