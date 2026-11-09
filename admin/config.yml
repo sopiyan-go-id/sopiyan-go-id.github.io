@@ -2,8 +2,9 @@ backend:
   name: github
   repo: sopiyan-go-id/sopiyan-go-id.github.io
   branch: main
-  use_pkce: true 
-app_id: "Ov23li8an2cC2K0wC32J"
+  use_pkce: true
+  auth_type: "pkce"
+  app_id: "Ov23li8an2cC2K0wC32J"
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 site_url: "https://sopiyan-go-id.github.io"
