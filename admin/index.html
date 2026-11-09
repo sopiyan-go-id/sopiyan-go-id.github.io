@@ -11,6 +11,52 @@
   </style>
 </head>
 <body>
+  <script>
+    window.CMS_MANUAL_INIT = true;
+  </script>
   <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+  <script>
+    window.CMS.init({
+      config: {
+        backend: {
+          name: 'github',
+          repo: 'sopiyan-go-id/sopiyan-go-id.github.io',
+          branch: 'main',
+          app_id: 'Ov23li8an2cC2K0wC32J'
+        },
+        media_folder: 'assets/uploads',
+        public_folder: '/assets/uploads',
+        locale: 'id',
+        collections: [
+          {
+            name: 'manajemen_berita',
+            label: 'Manajemen Website',
+            editor: { preview: false },
+            files: [
+              {
+                name: 'berita',
+                label: 'Berita & Kegiatan',
+                file: 'data/berita.json',
+                fields: [
+                  { label: 'Daftar Artikel', name: 'artikel', widget: 'list', fields: [
+                    { label: 'Status Publikasi', name: 'status', widget: 'select', options: ['Terbit', 'Draf'], default: 'Terbit' },
+                    { label: 'Berita Unggulan', name: 'unggulan', widget: 'boolean', default: false },
+                    { label: 'Judul Artikel', name: 'judul', widget: 'string' },
+                    { label: 'Slug (URL tanpa spasi)', name: 'slug', widget: 'string' },
+                    { label: 'Kategori', name: 'kategori', widget: 'string' },
+                    { label: 'Tanggal', name: 'tanggal', widget: 'datetime', format: 'YYYY-MM-DD' },
+                    { label: 'Lokasi', name: 'lokasi', widget: 'string', default: 'Lampung Selatan' },
+                    { label: 'Foto Utama', name: 'foto', widget: 'image' },
+                    { label: 'Ringkasan', name: 'ringkasan', widget: 'text' },
+                    { label: 'Isi Berita', name: 'isi', widget: 'markdown' }
+                  ]}
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    });
+  </script>
 </body>
 </html>
