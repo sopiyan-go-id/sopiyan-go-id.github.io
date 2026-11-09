@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#09090b">
+    <meta name="theme-color" content="#172333">
     
     <!-- SEO & Meta Tags -->
     <title>SOPIYAN | Public Governance & Leadership</title>
     <meta name="description" content="Website profil resmi SOPIYAN. Berdedikasi pada tata kelola pemerintahan, pelayanan publik, dan pembangunan masyarakat. Vidya, Seva, Nayatva.">
-    <meta name="keywords" content="Sopiyan, Ilmu Pemerintahan, Administrasi Publik, Kepemimpinan, Pelayanan Publik, Lampung Selatan">
+    <meta name="keywords" content="Sopiyan, Ilmu Pemerintahan, Administrasi Publik, Kepemimpinan, Pelayanan Publik, Lampung Selatan, Kasi Pelayanan">
     <meta name="author" content="Sopiyan">
     
     <!-- Open Graph / Social Media -->
@@ -30,7 +30,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -45,17 +45,17 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        sans: ['"Inter"', 'sans-serif'],
                         serif: ['"Playfair Display"', 'serif'],
                     },
                     colors: {
                         brand: {
-                            dark: '#09090b',    // Zinc 950
-                            darker: '#000000',
-                            light: '#fafafa',   // Zinc 50
-                            gold: '#c5a059',    // Champagne Gold
-                            goldHover: '#b08d48',
-                            grey: '#27272a'     // Zinc 800
+                            navy: '#172333',       // Deep Navy
+                            ivory: '#F4EBDD',      // Warm Ivory
+                            gold: '#B99A61',       // Muted Gold
+                            goldHover: '#a38652',
+                            charcoal: '#343A40',   // Charcoal
+                            charcoalLight: '#495057'
                         }
                     }
                 }
@@ -65,90 +65,73 @@
 
     <!-- Custom CSS -->
     <style>
-        /* Base optimizations */
-        body { font-feature-settings: "cv02", "cv03", "cv04", "cv11"; }
-        ::selection { background-color: #c5a059; color: #fff; }
+        body { font-feature-settings: "cv02", "cv03", "cv04", "cv11"; background-color: #F4EBDD; }
+        ::selection { background-color: #B99A61; color: #fff; }
         
-        /* Smooth, minimalist utilities */
         .glass-nav {
-            background: rgba(9, 9, 11, 0.85);
+            background: rgba(23, 35, 51, 0.95);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
         
-        .gold-gradient-text {
-            background: linear-gradient(135deg, #e5e5e5 0%, #c5a059 50%, #9a7b40 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
         .hover-lift {
             transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .hover-lift:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
         }
 
-        /* Nav link hover effect */
         .nav-link { position: relative; }
         .nav-link::after {
             content: '';
             position: absolute;
             width: 0; height: 1px;
             bottom: -4px; left: 0;
-            background-color: #c5a059;
+            background-color: #B99A61;
             transition: width 0.3s ease;
         }
         .nav-link:hover::after { width: 100%; }
 
-        /* Subtle grid background */
-        .bg-grid {
-            background-size: 40px 40px;
-            background-image: linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
-        }
-        .bg-grid-dark {
-            background-size: 40px 40px;
-            background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
-        }
-
-        /* Timeline styling */
         .timeline-dot {
             position: absolute;
             left: -5px;
-            top: 6px;
+            top: 8px;
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            background-color: #c5a059;
-            box-shadow: 0 0 0 4px #fafafa;
+            background-color: #B99A61;
+            box-shadow: 0 0 0 4px #F4EBDD;
         }
+
+        /* Editorial Image Hover */
+        .editorial-img-container { overflow: hidden; }
+        .editorial-img-container img { transition: transform 0.7s ease; }
+        .editorial-article:hover .editorial-img-container img { transform: scale(1.05); }
     </style>
 </head>
-<body class="bg-brand-light text-zinc-800 antialiased relative">
+<body class="text-brand-charcoal antialiased relative">
 
     <!-- NAVIGATION -->
     <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 py-4 glass-nav">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center">
             <a href="#beranda" class="flex items-center gap-3 group">
-                <img src="https://i.ibb.co.com/BVmbzyR0/logo.png" alt="Monogram Sopiyan" class="h-10 object-contain drop-shadow-lg opacity-90 group-hover:opacity-100 transition-opacity">
+                <img src="https://i.ibb.co.com/BVmbzyR0/logo.png" alt="Monogram Sopiyan" class="h-10 object-contain drop-shadow-lg">
                 <span class="text-white font-serif font-semibold tracking-widest text-sm hidden sm:block">SOPIYAN</span>
             </a>
 
-            <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-zinc-300">
-                <a href="#tentang" class="nav-link hover:text-white transition-colors">Tentang</a>
-                <a href="#pendidikan" class="nav-link hover:text-white transition-colors">Pendidikan</a>
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-brand-ivory/80">
+                <a href="#tentang" class="nav-link hover:text-white transition-colors">Profil</a>
+                <a href="#pendidikan" class="nav-link hover:text-white transition-colors">Akademik</a>
                 <a href="#pengalaman" class="nav-link hover:text-white transition-colors">Pengalaman</a>
-                <a href="#fokus" class="nav-link hover:text-white transition-colors">Fokus & Minat</a>
-                <a href="#publikasi" class="nav-link hover:text-white transition-colors">Publikasi</a>
+                <a href="#berita" class="nav-link hover:text-white transition-colors">Berita & Kegiatan</a>
+                <a href="#perhatian" class="nav-link hover:text-white transition-colors">Bidang Perhatian</a>
             </nav>
 
             <div class="hidden lg:block">
-                <a href="#kontak" class="px-6 py-2.5 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-darker transition-all duration-300 rounded-sm text-sm font-semibold tracking-wide">
-                    Hubungi Sopiyan
+                <a href="#kontak" class="px-6 py-2 border border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-navy transition-all duration-300 text-sm font-semibold tracking-wide">
+                    Kontak Resmi
                 </a>
             </div>
 
@@ -159,60 +142,58 @@
         </div>
 
         <!-- Mobile Nav Menu -->
-        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-brand-darker border-t border-white/10 shadow-2xl">
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-brand-navy border-t border-white/10 shadow-2xl">
             <div class="flex flex-col px-6 py-6 space-y-5 text-sm font-medium">
-                <a href="#tentang" class="text-zinc-300 hover:text-brand-gold mobile-link">Tentang</a>
-                <a href="#pendidikan" class="text-zinc-300 hover:text-brand-gold mobile-link">Pendidikan</a>
-                <a href="#pengalaman" class="text-zinc-300 hover:text-brand-gold mobile-link">Pengalaman</a>
-                <a href="#fokus" class="text-zinc-300 hover:text-brand-gold mobile-link">Fokus & Minat</a>
-                <a href="#publikasi" class="text-zinc-300 hover:text-brand-gold mobile-link">Publikasi</a>
-                <a href="#kontak" class="text-brand-gold font-semibold pt-4 border-t border-white/10 mobile-link">Hubungi Sopiyan</a>
+                <a href="#tentang" class="text-brand-ivory hover:text-brand-gold mobile-link">Profil</a>
+                <a href="#pendidikan" class="text-brand-ivory hover:text-brand-gold mobile-link">Akademik</a>
+                <a href="#pengalaman" class="text-brand-ivory hover:text-brand-gold mobile-link">Pengalaman</a>
+                <a href="#berita" class="text-brand-ivory hover:text-brand-gold mobile-link">Berita & Kegiatan</a>
+                <a href="#perhatian" class="text-brand-ivory hover:text-brand-gold mobile-link">Bidang Perhatian</a>
+                <a href="#kontak" class="text-brand-gold font-semibold pt-4 border-t border-white/10 mobile-link">Kontak Resmi</a>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- HERO SECTION -->
-        <section id="beranda" class="relative min-h-screen flex items-center bg-brand-dark bg-grid-dark pt-20 overflow-hidden">
+        <!-- 1. HERO / LANDING PAGE -->
+        <section id="beranda" class="relative min-h-screen flex items-center bg-brand-navy pt-20 overflow-hidden">
+            <!-- Subtle background accent -->
+            <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(#B99A61 1px, transparent 1px); background-size: 40px 40px;"></div>
+            
             <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full relative z-10 py-20">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     
                     <!-- Text Content -->
                     <div data-aos="fade-right" data-aos-duration="1000">
-                        <p class="text-brand-gold font-medium tracking-[0.2em] text-sm uppercase mb-6 flex items-center gap-3">
+                        <p class="text-brand-gold font-medium tracking-[0.2em] text-xs md:text-sm uppercase mb-6 flex items-center gap-3">
                             <span class="w-8 h-[1px] bg-brand-gold"></span>
-                            Public Governance & Leadership
+                            Executive-Academic Profile
                         </p>
-                        <h1 class="font-serif text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-6">
+                        <h1 class="font-serif text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-4">
                             SOPIYAN
                         </h1>
-                        <h2 class="text-2xl md:text-3xl text-zinc-400 font-serif italic mb-8">
-                            Vidya, Seva, Nayatva.
-                        </h2>
-                        <p class="text-zinc-400 text-lg leading-relaxed mb-10 max-w-lg font-light">
-                            Berdedikasi dalam membangun tata kelola pemerintahan yang baik, mendorong inovasi pelayanan publik, dan memperkuat partisipasi masyarakat untuk pembangunan inklusif.
+                        <p class="text-brand-ivory/70 text-lg md:text-xl font-light mb-10 max-w-lg leading-relaxed">
+                            Berdedikasi dalam tata kelola pemerintahan, inovasi pelayanan publik, dan pemberdayaan masyarakat untuk pembangunan inklusif.
                         </p>
                         <div class="flex flex-wrap gap-4">
-                            <a href="#tentang" class="px-8 py-3.5 bg-brand-gold text-brand-darker font-semibold text-sm hover:bg-brand-goldHover transition-colors rounded-sm shadow-[0_0_20px_rgba(197,160,89,0.2)]">
-                                Jelajahi Profil
+                            <a href="#tentang" class="px-8 py-3.5 bg-brand-gold text-brand-navy font-semibold text-sm hover:bg-brand-goldHover transition-colors shadow-lg">
+                                Eksplorasi Profil
                             </a>
-                            <a href="#kontak" class="px-8 py-3.5 border border-zinc-700 text-white font-semibold text-sm hover:border-brand-gold hover:text-brand-gold transition-colors rounded-sm">
-                                Kolaborasi
+                            <a href="#berita" class="px-8 py-3.5 border border-brand-charcoalLight text-white font-semibold text-sm hover:border-brand-gold hover:text-brand-gold transition-colors">
+                                Lihat Berita & Kegiatan
                             </a>
                         </div>
                     </div>
 
-                    <!-- Visual Profile -->
+                    <!-- Visual Profile (Circular as requested in ledger) -->
                     <div class="relative flex justify-center lg:justify-end" data-aos="fade-left" data-aos-duration="1200">
-                        <div class="relative w-72 h-80 md:w-96 md:h-[28rem] z-10">
-                            <!-- Decorative Elements -->
-                            <div class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-brand-gold opacity-50"></div>
-                            <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-brand-gold opacity-50"></div>
+                        <div class="relative w-64 h-64 md:w-80 md:h-80 z-10">
+                            <!-- Circular Decorative Ring -->
+                            <div class="absolute -inset-4 border border-brand-gold/30 rounded-full animate-pulse-slow"></div>
                             
-                            <!-- Image Container (Tanpa Badge) -->
-                            <div class="w-full h-full overflow-hidden rounded-sm relative shadow-2xl">
-                                <div class="absolute inset-0 bg-brand-dark opacity-10 z-10 mix-blend-overlay"></div>
-                                <img src="https://cdn.phototourl.com/member/2026-10-25-c2525906-e5d8-4a15-b314-a14c5eb94846.jpg" alt="Potret Profesional Sopiyan" class="w-full h-full object-cover grayscale-[20%] contrast-[1.1] hover:grayscale-0 transition-all duration-700" loading="eager">
+                            <!-- Circular Image Container -->
+                            <div class="w-full h-full overflow-hidden rounded-full relative shadow-2xl border-4 border-brand-navy">
+                                <img src="https://cdn.phototourl.com/member/2026-10-25-c2525906-e5d8-4a15-b314-a14c5eb94846.jpg" alt="Potret Resmi Sopiyan" class="w-full h-full object-cover contrast-[1.1]" loading="eager">
                             </div>
                         </div>
                     </div>
@@ -220,61 +201,52 @@
             </div>
         </section>
 
-        <!-- TENTANG SAYA -->
-        <section id="tentang" class="py-32 bg-brand-light relative">
+        <!-- 2. ABOUT SOPIYAN -->
+        <section id="tentang" class="py-24 md:py-32 bg-brand-ivory relative border-b border-brand-gold/20">
             <div class="max-w-6xl mx-auto px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
                     
-                    <div class="lg:col-span-5" data-aos="fade-up">
-                        <span class="text-zinc-500 font-semibold tracking-widest text-xs uppercase mb-2 block">Profil Pribadi</span>
-                        <h2 class="font-serif text-4xl text-brand-darker font-bold mb-6">Tentang Sopiyan</h2>
+                    <div class="lg:col-span-4" data-aos="fade-up">
+                        <span class="text-brand-gold font-semibold tracking-widest text-xs uppercase mb-2 block">Profil Utama</span>
+                        <h2 class="font-serif text-4xl text-brand-navy font-bold mb-6">Tentang Sopiyan</h2>
                         <div class="w-12 h-1 bg-brand-gold mb-8"></div>
                         
-                        <!-- Tabel Data Diri yang Dirapikan -->
-                        <div class="bg-white p-8 border border-zinc-100 shadow-sm rounded-sm">
-                            <table class="w-full text-sm text-zinc-600">
+                        <div class="bg-white p-6 border border-black/5 shadow-sm">
+                            <table class="w-full text-sm text-brand-charcoal">
                                 <tbody>
-                                    <tr class="border-b border-zinc-50">
-                                        <td class="py-3 font-medium text-zinc-500 w-[45%]">Nama Panggilan</td>
-                                        <td class="py-3 font-semibold text-brand-darker">: Piyan</td>
+                                    <tr class="border-b border-black/5">
+                                        <td class="py-3 font-medium text-brand-charcoalLight w-[45%]">Nama Panggilan</td>
+                                        <td class="py-3 font-semibold text-brand-navy">Piyan</td>
                                     </tr>
-                                    <tr class="border-b border-zinc-50">
-                                        <td class="py-3 font-medium text-zinc-500">Suku / Latar Belakang</td>
-                                        <td class="py-3 font-semibold text-brand-darker">: Sunda & Jawa</td>
+                                    <tr class="border-b border-black/5">
+                                        <td class="py-3 font-medium text-brand-charcoalLight">Domisili</td>
+                                        <td class="py-3 font-semibold text-brand-navy">Lampung Selatan</td>
                                     </tr>
-                                    <tr class="border-b border-zinc-50">
-                                        <td class="py-3 font-medium text-zinc-500">Domisili</td>
-                                        <td class="py-3 font-semibold text-brand-darker">: Lampung Selatan</td>
-                                    </tr>
-                                    <tr class="border-b border-zinc-50">
-                                        <td class="py-3 font-medium text-zinc-500">Agama</td>
-                                        <td class="py-3 font-semibold text-brand-darker">: Islam</td>
-                                    </tr>
-                                    <tr class="border-b border-zinc-50">
-                                        <td class="py-3 font-medium text-zinc-500">Status</td>
-                                        <td class="py-3 font-semibold text-brand-darker">: Belum Menikah</td>
+                                    <tr class="border-b border-black/5">
+                                        <td class="py-3 font-medium text-brand-charcoalLight">Status</td>
+                                        <td class="py-3 font-semibold text-brand-navy">Belum Menikah</td>
                                     </tr>
                                     <tr>
-                                        <td class="py-3 font-medium text-zinc-500">Zodiak</td>
-                                        <td class="py-3 font-semibold text-brand-darker">: Aquarius</td>
+                                        <td class="py-3 font-medium text-brand-charcoalLight">Zodiak</td>
+                                        <td class="py-3 font-semibold text-brand-navy">Aquarius</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                     
-                    <div class="lg:col-span-7 text-zinc-600 space-y-6 text-lg font-light leading-relaxed" data-aos="fade-up" data-aos-delay="200">
-                        <p class="text-2xl font-serif text-brand-darker leading-snug mb-8">
+                    <div class="lg:col-span-8 text-brand-charcoal space-y-6 text-base md:text-lg font-light leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+                        <p class="text-xl md:text-2xl font-serif text-brand-navy leading-snug mb-8 border-l-4 border-brand-gold pl-6 py-2">
                             "Membangun tata kelola publik bukan sekadar menjalankan administrasi, melainkan memastikan kebijakan hadir dan berdampak nyata bagi masyarakat."
                         </p>
                         <p>
-                            Sopiyan adalah seorang akademisi dan praktisi muda yang berdomisili di Kabupaten Lampung Selatan. Latar belakang saya berakar kuat pada sektor publik, dibuktikan melalui studi ganda yang saat ini ia tempuh dalam disiplin <strong>Ilmu Pemerintahan</strong> dan <strong>Administrasi Publik</strong>.
+                            Sopiyan adalah seorang akademisi dan praktisi muda di bidang pemerintahan dan pelayanan publik yang berdomisili di Kabupaten Lampung Selatan. Orientasi profesionalnya berakar kuat pada optimalisasi sektor publik dan pengembangan sosial kemasyarakatan.
                         </p>
                         <p>
-                            Sebagai bentuk dedikasi keilmuan, Sopiyan terlibat secara aktif dalam dinamika kepemimpinan mahasiswa serta kepanitiaan strategis penyelenggaraan pemilihan umum di tingkat daerah. Fokus utama Sopiyan terletak pada implementasi <em>good governance</em>, perbaikan sistem birokrasi, dan pemberdayaan masyarakat desa.
+                            Landasan keilmuannya saat ini terus diperdalam melalui studi ganda dalam disiplin <strong>Ilmu Pemerintahan</strong> dan <strong>Administrasi Publik</strong>. Ia menggabungkan teori akademik dengan keterlibatan langsung di lapangan, mulai dari dinamika kepemimpinan organisasi kemahasiswaan, penyelenggaraan tata kelola pemilu di tingkat daerah, hingga keterlibatannya secara struktural di pemerintahan daerah.
                         </p>
                         <p>
-                            Prinsip kepemimpinan Sopiyan terangkum dalam filosofi <strong class="text-brand-gold">Vidya, Seva, Nayatva</strong>—sebuah komitmen bahwa ilmu pengetahuan (Vidya) harus bermuara pada pengabdian (Seva) melalui kepemimpinan yang berintegritas (Nayatva).
+                            Melalui dedikasi yang konsisten, Sopiyan memfokuskan pemikiran dan langkahnya pada implementasi <em>good governance</em>, reformasi birokrasi, serta pemberdayaan masyarakat pedesaan demi terwujudnya pelayanan publik yang prima dan inklusif.
                         </p>
                     </div>
 
@@ -282,223 +254,351 @@
             </div>
         </section>
 
-        <!-- PENDIDIKAN -->
-        <section id="pendidikan" class="py-32 bg-white border-y border-zinc-100 bg-grid">
+        <!-- 7. PRINCIPLES & PHILOSOPHY (Visual Break) -->
+        <section class="py-20 bg-brand-charcoal text-center relative overflow-hidden">
+            <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
+            <div class="max-w-4xl mx-auto px-6 relative z-10" data-aos="zoom-in">
+                <h2 class="font-serif text-3xl md:text-5xl text-brand-gold italic mb-4">Vidya, Seva, Nayatva.</h2>
+                <p class="text-brand-ivory text-lg md:text-xl tracking-widest uppercase font-light">Ilmu, Pengabdian, dan Kepemimpinan.</p>
+            </div>
+        </section>
+
+        <!-- 3. ACADEMIC JOURNEY -->
+        <section id="pendidikan" class="py-24 bg-white border-b border-brand-gold/10">
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                <div class="text-center mb-20" data-aos="fade-up">
-                    <span class="text-zinc-500 font-semibold tracking-widest text-xs uppercase mb-2 block">Latar Belakang Akademik</span>
-                    <h2 class="font-serif text-4xl text-brand-darker font-bold">Pendidikan</h2>
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <span class="text-brand-gold font-semibold tracking-widest text-xs uppercase mb-2 block">Perjalanan Keilmuan</span>
+                    <h2 class="font-serif text-3xl md:text-4xl text-brand-navy font-bold">Latar Belakang Akademik</h2>
                     <div class="w-12 h-1 bg-brand-gold mx-auto mt-6"></div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                     <!-- Universitas Terbuka -->
-                    <div class="bg-brand-light border border-zinc-100 p-10 hover-lift relative overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
+                    <a href="https://www.ut.ac.id" target="_blank" rel="noopener noreferrer" class="bg-brand-ivory border border-black/5 p-8 hover-lift relative overflow-hidden group block" data-aos="fade-up" data-aos-delay="100">
                         <div class="absolute top-0 left-0 w-full h-1 bg-brand-gold transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
                         <div class="flex flex-col sm:flex-row gap-6 items-start">
-                            <div class="w-16 h-16 bg-white p-2 rounded-sm shadow-sm border border-zinc-100 shrink-0">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Logo_Universitas_Terbuka.MP4.png" alt="UT" class="w-full h-full object-contain grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all">
+                            <div class="w-16 h-16 bg-white p-2 rounded shadow-sm border border-black/5 shrink-0 flex items-center justify-center">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Logo_Universitas_Terbuka.MP4.png" alt="Universitas Terbuka" class="w-12 h-12 object-contain">
                             </div>
                             <div>
-                                <span class="inline-block px-2 py-1 bg-zinc-100 text-zinc-600 text-xs font-semibold tracking-wider uppercase mb-3 rounded-sm">Mahasiswa Aktif</span>
-                                <h3 class="font-serif text-xl font-bold text-brand-darker mb-1">S1 Ilmu Pemerintahan (RPL)</h3>
-                                <p class="text-brand-gold font-medium mb-3">Universitas Terbuka (UT)</p>
-                                <p class="text-sm text-zinc-500 font-light">Fakultas Hukum Ilmu Sosial Dan Ilmu Politik</p>
+                                <span class="inline-block px-2 py-1 bg-brand-navy text-brand-ivory text-[10px] font-semibold tracking-wider uppercase mb-3">Mahasiswa Aktif</span>
+                                <h3 class="font-serif text-xl font-bold text-brand-navy mb-1">S1 Ilmu Pemerintahan (RPL)</h3>
+                                <p class="text-brand-gold font-medium mb-2 text-sm">Universitas Terbuka (UT)</p>
+                                <p class="text-xs text-brand-charcoalLight font-light">Fakultas Hukum Ilmu Sosial Dan Ilmu Politik</p>
                             </div>
                         </div>
-                    </div>
+                    </a>
 
                     <!-- Universitas Indonesia Mandiri -->
-                    <div class="bg-brand-light border border-zinc-100 p-10 hover-lift relative overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
+                    <a href="https://uimandiri.ac.id" target="_blank" rel="noopener noreferrer" class="bg-brand-ivory border border-black/5 p-8 hover-lift relative overflow-hidden group block" data-aos="fade-up" data-aos-delay="200">
                         <div class="absolute top-0 left-0 w-full h-1 bg-brand-gold transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
                         <div class="flex flex-col sm:flex-row gap-6 items-start">
-                            <div class="w-16 h-16 bg-white p-2 rounded-sm shadow-sm border border-zinc-100 shrink-0">
-                                <img src="https://uimandiri.ac.id/assets/logo/logoutamauim.png" alt="UIM" class="w-full h-full object-contain grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all">
+                            <div class="w-16 h-16 bg-white p-2 rounded shadow-sm border border-black/5 shrink-0 flex items-center justify-center">
+                                <img src="https://uimandiri.ac.id/assets/logo/logoutamauim.png" alt="Universitas Indonesia Mandiri" class="w-12 h-12 object-contain">
                             </div>
                             <div>
-                                <span class="inline-block px-2 py-1 bg-zinc-100 text-zinc-600 text-xs font-semibold tracking-wider uppercase mb-3 rounded-sm">Mahasiswa Aktif</span>
-                                <h3 class="font-serif text-xl font-bold text-brand-darker mb-1">S1 Administrasi Publik (Non Reguler)</h3>
-                                <p class="text-brand-gold font-medium mb-3">Universitas Indonesia Mandiri (UIM)</p>
-                                <p class="text-sm text-zinc-500 font-light">Fakultas Sosial dan Humaniora</p>
+                                <span class="inline-block px-2 py-1 bg-brand-navy text-brand-ivory text-[10px] font-semibold tracking-wider uppercase mb-3">Mahasiswa Aktif</span>
+                                <h3 class="font-serif text-xl font-bold text-brand-navy mb-1">S1 Administrasi Publik (Non Reguler)</h3>
+                                <p class="text-brand-gold font-medium mb-2 text-sm">Universitas Indonesia Mandiri (UIM)</p>
+                                <p class="text-xs text-brand-charcoalLight font-light">Fakultas Sosial dan Humaniora</p>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- PENGALAMAN -->
-        <section id="pengalaman" class="py-32 bg-brand-light">
+        <!-- 4. EXPERIENCE & INVOLVEMENT -->
+        <section id="pengalaman" class="py-24 bg-brand-ivory">
             <div class="max-w-4xl mx-auto px-6 lg:px-8">
-                <div class="mb-20" data-aos="fade-up">
-                    <span class="text-zinc-500 font-semibold tracking-widest text-xs uppercase mb-2 block">Rekam Jejak Profesi & Organisasi</span>
-                    <h2 class="font-serif text-4xl text-brand-darker font-bold">Pengalaman</h2>
+                <div class="mb-16" data-aos="fade-up">
+                    <span class="text-brand-gold font-semibold tracking-widest text-xs uppercase mb-2 block">Rekam Jejak Profesi & Organisasi</span>
+                    <h2 class="font-serif text-3xl md:text-4xl text-brand-navy font-bold">Pengalaman</h2>
                     <div class="w-12 h-1 bg-brand-gold mt-6"></div>
                 </div>
 
-                <div class="relative border-l border-zinc-200 ml-3 md:ml-0 space-y-12">
+                <div class="relative border-l border-brand-gold/30 ml-3 md:ml-0 space-y-12">
                     
-                    <!-- Experience Item -->
+                    <!-- Kasi Pelayanan -->
+                    <div class="relative pl-8 md:pl-12" data-aos="fade-up" data-aos-delay="50">
+                        <div class="timeline-dot"></div>
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2 gap-2">
+                            <h3 class="text-xl font-bold text-brand-navy">Kepala Seksi (Kasi) Pelayanan</h3>
+                            <span class="px-3 py-1 bg-brand-navy text-brand-ivory font-semibold text-xs shrink-0">2023 – Sekarang</span>
+                        </div>
+                        <p class="text-brand-gold font-medium mb-2 text-sm">Pemerintah Kabupaten Lampung Selatan</p>
+                        <p class="text-sm text-brand-charcoal font-light leading-relaxed">Bertanggung jawab dalam merumuskan, melaksanakan, dan mengawasi implementasi kebijakan teknis pelayanan publik di tingkat instansi guna memastikan birokrasi yang responsif, transparan, dan berorientasi pada masyarakat.</p>
+                    </div>
+
+                    <!-- Ketua Ormawa -->
                     <div class="relative pl-8 md:pl-12" data-aos="fade-up" data-aos-delay="100">
                         <div class="timeline-dot"></div>
                         <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2 gap-2">
-                            <h3 class="text-xl font-bold text-brand-darker">Ketua Organisasi Mahasiswa (Ormawa)</h3>
-                            <span class="text-brand-gold font-semibold text-sm shrink-0">2026 – 2027</span>
+                            <h3 class="text-xl font-bold text-brand-navy">Ketua Organisasi Mahasiswa (Ormawa)</h3>
+                            <span class="text-brand-navy font-semibold text-sm shrink-0 border-b border-brand-gold">2026 – 2027</span>
                         </div>
-                        <p class="text-zinc-600 font-medium mb-2">Universitas Terbuka Salut Kalianda</p>
-                        <p class="text-sm text-zinc-500 font-light">Memimpin arah kebijakan dan program strategis organisasi kemahasiswaan untuk meningkatkan kapasitas intelektual dan pengabdian mahasiswa.</p>
+                        <p class="text-brand-gold font-medium mb-2 text-sm">Universitas Terbuka Salut Kalianda</p>
+                        <p class="text-sm text-brand-charcoal font-light leading-relaxed">Memimpin arah kebijakan, kaderisasi, dan program strategis organisasi kemahasiswaan untuk meningkatkan kapasitas intelektual, advokasi, dan pengabdian mahasiswa kepada lingkungan sosial.</p>
                     </div>
 
-                    <!-- Experience Item -->
+                    <!-- Ketua KPPS -->
                     <div class="relative pl-8 md:pl-12" data-aos="fade-up" data-aos-delay="200">
                         <div class="timeline-dot"></div>
                         <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2 gap-2">
-                            <h3 class="text-xl font-bold text-brand-darker">Ketua Kelompok Penyelenggara Pemungutan Suara (KPPS)</h3>
-                            <span class="text-brand-gold font-semibold text-sm shrink-0">2025</span>
+                            <h3 class="text-xl font-bold text-brand-navy">Ketua Kelompok Penyelenggara Pemungutan Suara (KPPS)</h3>
+                            <span class="text-brand-navy font-semibold text-sm shrink-0 border-b border-brand-gold">2025</span>
                         </div>
-                        <p class="text-zinc-600 font-medium mb-2">Pilkada Serentak</p>
-                        <p class="text-sm text-zinc-500 font-light">Menjamin kelancaran, transparansi, dan integritas pelaksanaan pemungutan suara di tingkat TPS demi terwujudnya pemilihan yang demokratis.</p>
+                        <p class="text-brand-gold font-medium mb-2 text-sm">Pilkada Serentak</p>
+                        <p class="text-sm text-brand-charcoal font-light leading-relaxed">Menjamin kelancaran, transparansi, dan integritas pelaksanaan pemungutan serta penghitungan suara di tingkat TPS demi terwujudnya pemilihan daerah yang demokratis dan akuntabel.</p>
                     </div>
 
-                    <!-- Experience Item -->
+                    <!-- Pantarlih -->
                     <div class="relative pl-8 md:pl-12" data-aos="fade-up" data-aos-delay="300">
                         <div class="timeline-dot"></div>
                         <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2 gap-2">
-                            <h3 class="text-xl font-bold text-brand-darker">Petugas Pemutakhiran Data Pemilih (Pantarlih)</h3>
-                            <span class="text-brand-gold font-semibold text-sm shrink-0">2024 & 2025</span>
+                            <h3 class="text-xl font-bold text-brand-navy">Petugas Pemutakhiran Data Pemilih (Pantarlih)</h3>
+                            <span class="text-brand-navy font-semibold text-sm shrink-0 border-b border-brand-gold">2024 & 2025</span>
                         </div>
-                        <p class="text-zinc-600 font-medium mb-2">Pemilu & Pilkada Serentak</p>
-                        <p class="text-sm text-zinc-500 font-light">Melakukan verifikasi dan validasi data pemilih secara faktual untuk memastikan akurasi daftar pemilih.</p>
+                        <p class="text-brand-gold font-medium mb-2 text-sm">Pemilu & Pilkada Serentak</p>
+                        <p class="text-sm text-brand-charcoal font-light leading-relaxed">Melakukan proses Pencocokan dan Penelitian (Coklit), serta verifikasi data pemilih secara faktual ke masyarakat untuk menjamin akurasi dan validitas Daftar Pemilih Tetap (DPT).</p>
                     </div>
 
-                    <!-- Experience Item -->
+                    <!-- KPPS & Pelatihan -->
                     <div class="relative pl-8 md:pl-12" data-aos="fade-up" data-aos-delay="400">
                         <div class="timeline-dot"></div>
                         <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2 gap-2">
-                            <h3 class="text-xl font-bold text-brand-darker">Anggota KPPS & Peserta Pelatihan Bencana</h3>
-                            <span class="text-brand-gold font-semibold text-sm shrink-0">2024 – 2025</span>
+                            <h3 class="text-xl font-bold text-brand-navy">Anggota KPPS & Peserta Pelatihan Bencana</h3>
+                            <span class="text-brand-navy font-semibold text-sm shrink-0 border-b border-brand-gold">2024 – 2025</span>
                         </div>
-                        <p class="text-zinc-600 font-medium mb-2">Pemilu 2024 & BPBD Lampung Selatan</p>
-                        <p class="text-sm text-zinc-500 font-light">Anggota KPPS Pemilu 2024 dan tersertifikasi dalam Pelatihan Penanggulangan Bencana Pasti II yang diselenggarakan oleh BPBD.</p>
+                        <p class="text-brand-gold font-medium mb-2 text-sm">Pemilu 2024 & BPBD</p>
+                        <p class="text-sm text-brand-charcoal font-light leading-relaxed">Bertugas sebagai Anggota KPPS pada Pemilu Serentak 2024. Selain itu, secara aktif berpartisipasi dan tersertifikasi dalam Pelatihan Penanggulangan Bencana Pasti II yang diselenggarakan oleh BPBD berturut-turut pada tahun 2024 dan 2025.</p>
                     </div>
 
                 </div>
             </div>
         </section>
 
-        <!-- FOKUS & MINAT -->
-        <section id="fokus" class="py-32 bg-brand-dark text-white relative">
+        <!-- 5. NEWS & ACTIVITIES (Editorial Style) -->
+        <section id="berita" class="py-24 bg-white">
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                <div class="text-center mb-20" data-aos="fade-up">
-                    <span class="text-brand-gold font-semibold tracking-widest text-xs uppercase mb-2 block">Area Keahlian</span>
-                    <h2 class="font-serif text-4xl font-bold">Fokus & Minat</h2>
+                
+                <!-- Section Header -->
+                <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-12 border-b border-brand-navy/10 pb-6" data-aos="fade-up">
+                    <div>
+                        <span class="text-brand-gold font-semibold tracking-widest text-xs uppercase mb-2 block">Dokumentasi & Publikasi</span>
+                        <h2 class="font-serif text-3xl md:text-4xl text-brand-navy font-bold">Berita & Kegiatan Sopiyan</h2>
+                        <p class="text-sm text-brand-charcoalLight mt-3 max-w-2xl font-light">
+                            Arsip aktivitas profesional, agenda kemahasiswaan, keterlibatan sosial, dan perkembangan perjalanan pengabdian.
+                        </p>
+                    </div>
+                    <div class="mt-6 md:mt-0">
+                        <a href="#berita" class="text-sm font-semibold text-brand-navy hover:text-brand-gold transition-colors inline-flex items-center gap-2">
+                            Lihat Arsip Lengkap <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Featured News Article -->
+                <!-- Struktur HTML Semantik CMS-Ready -->
+                <article class="editorial-article bg-brand-ivory border border-black/5 mb-8 group" data-aos="fade-up">
+                    <div class="flex flex-col lg:flex-row">
+                        <figure class="lg:w-7/12 editorial-img-container m-0 relative">
+                            <!-- Placeholder Image (Sebaiknya gunakan gambar kegiatan asli nantinya) -->
+                            <img src="https://images.unsplash.com/photo-1577415124269-fc1140a69e91?auto=format&fit=crop&w=1200&q=80" alt="Sopiyan meninjau kegiatan" class="w-full h-64 lg:h-full object-cover">
+                            <div class="absolute top-4 left-4 bg-brand-navy text-white text-xs font-bold px-3 py-1 uppercase tracking-wider shadow-md">
+                                Pelayanan Publik
+                            </div>
+                        </figure>
+                        <div class="lg:w-5/12 p-8 lg:p-12 flex flex-col justify-center">
+                            <header>
+                                <div class="flex items-center gap-4 text-xs text-brand-charcoalLight font-medium mb-4">
+                                    <time datetime="2026-11-09"><i class="fa-regular fa-calendar mr-1"></i> 09 Nov 2026</time>
+                                    <span><i class="fa-solid fa-location-dot mr-1"></i> Lampung Selatan</span>
+                                </div>
+                                <h3 class="font-serif text-2xl lg:text-3xl font-bold text-brand-navy leading-tight mb-4 group-hover:text-brand-gold transition-colors">
+                                    <a href="#detail-berita-1" class="focus:outline-none">SOPIYAN MELAKSANAKAN PENINJAUAN KEGIATAN DI DESA ABCD</a>
+                                </h3>
+                            </header>
+                            <p class="text-brand-charcoal text-sm leading-relaxed font-light mb-8">
+                                Peninjauan lapangan ini dilakukan untuk memastikan standar operasional pelayanan masyarakat berjalan dengan efisien serta menyerap langsung aspirasi warga terkait pembangunan infrastruktur desa...
+                            </p>
+                            <footer>
+                                <a href="#detail-berita-1" class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-brand-navy hover:text-brand-gold transition-colors">
+                                    Baca Selengkapnya <span class="w-6 h-[1px] bg-current"></span>
+                                </a>
+                            </footer>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Grid News Articles -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Article 2 -->
+                    <article class="editorial-article border border-black/5 bg-white group hover-lift flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                        <figure class="editorial-img-container h-48 m-0 relative">
+                            <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=800&q=80" alt="Kegiatan Organisasi" class="w-full h-full object-cover">
+                            <div class="absolute top-4 left-4 bg-white text-brand-navy text-[10px] font-bold px-2 py-1 uppercase tracking-wider border border-black/10">
+                                Organisasi
+                            </div>
+                        </figure>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <time datetime="2026-10-25" class="text-[11px] text-brand-charcoalLight font-medium mb-3 block">25 Okt 2026</time>
+                            <h3 class="font-serif text-lg font-bold text-brand-navy leading-snug mb-3 group-hover:text-brand-gold transition-colors">
+                                <a href="#detail-berita-2">SOPIYAN MENGHADIRI KEGIATAN ORGANISASI KEMAHASISWAAN</a>
+                            </h3>
+                            <p class="text-brand-charcoal text-sm font-light leading-relaxed mb-6 flex-grow">
+                                Konsolidasi program kerja organisasi dalam rangka merumuskan agenda strategis pengabdian mahasiswa kepada masyarakat.
+                            </p>
+                            <a href="#detail-berita-2" class="text-xs font-semibold text-brand-gold hover:text-brand-navy transition-colors mt-auto">Membaca Artikel &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Article 3 -->
+                    <article class="editorial-article border border-black/5 bg-white group hover-lift flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                        <figure class="editorial-img-container h-48 m-0 relative">
+                            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80" alt="Pengembangan Kapasitas" class="w-full h-full object-cover">
+                            <div class="absolute top-4 left-4 bg-white text-brand-navy text-[10px] font-bold px-2 py-1 uppercase tracking-wider border border-black/10">
+                                Akademik
+                            </div>
+                        </figure>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <time datetime="2026-10-10" class="text-[11px] text-brand-charcoalLight font-medium mb-3 block">10 Okt 2026</time>
+                            <h3 class="font-serif text-lg font-bold text-brand-navy leading-snug mb-3 group-hover:text-brand-gold transition-colors">
+                                <a href="#detail-berita-3">SOPIYAN MENGIKUTI KEGIATAN PENGEMBANGAN KAPASITAS</a>
+                            </h3>
+                            <p class="text-brand-charcoal text-sm font-light leading-relaxed mb-6 flex-grow">
+                                Peningkatan kompetensi kepemimpinan dan manajerial sebagai wujud nyata filosofi Vidya (Ilmu) dan Nayatva (Kepemimpinan).
+                            </p>
+                            <a href="#detail-berita-3" class="text-xs font-semibold text-brand-gold hover:text-brand-navy transition-colors mt-auto">Membaca Artikel &rarr;</a>
+                        </div>
+                    </article>
+
+                    <!-- Article 4 -->
+                    <article class="editorial-article border border-black/5 bg-white group hover-lift flex flex-col" data-aos="fade-up" data-aos-delay="300">
+                        <figure class="editorial-img-container h-48 m-0 relative">
+                            <img src="https://images.unsplash.com/photo-1593113563332-ce147fc24d38?auto=format&fit=crop&w=800&q=80" alt="Pelayanan Masyarakat" class="w-full h-full object-cover">
+                            <div class="absolute top-4 left-4 bg-white text-brand-navy text-[10px] font-bold px-2 py-1 uppercase tracking-wider border border-black/10">
+                                Pengabdian
+                            </div>
+                        </figure>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <time datetime="2026-09-15" class="text-[11px] text-brand-charcoalLight font-medium mb-3 block">15 Sep 2026</time>
+                            <h3 class="font-serif text-lg font-bold text-brand-navy leading-snug mb-3 group-hover:text-brand-gold transition-colors">
+                                <a href="#detail-berita-4">SOPIYAN TERLIBAT DALAM KEGIATAN PELAYANAN MASYARAKAT</a>
+                            </h3>
+                            <p class="text-brand-charcoal text-sm font-light leading-relaxed mb-6 flex-grow">
+                                Dedikasi secara langsung dalam memfasilitasi kebutuhan administrasi warga serta memberikan penyuluhan terkait program pemerintah.
+                            </p>
+                            <a href="#detail-berita-4" class="text-xs font-semibold text-brand-gold hover:text-brand-navy transition-colors mt-auto">Membaca Artikel &rarr;</a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. AREAS OF INTEREST -->
+        <section id="perhatian" class="py-24 bg-brand-navy text-white border-t-4 border-brand-gold relative">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <span class="text-brand-gold font-semibold tracking-widest text-xs uppercase mb-2 block">Fokus Kajian & Praktik</span>
+                    <h2 class="font-serif text-3xl md:text-4xl font-bold">Bidang Perhatian</h2>
                     <div class="w-12 h-1 bg-brand-gold mx-auto mt-6"></div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Item -->
-                    <div class="border border-zinc-800 p-8 hover:border-brand-gold transition-colors duration-300 group" data-aos="fade-up" data-aos-delay="100">
-                        <i class="fa-solid fa-landmark text-3xl text-zinc-600 group-hover:text-brand-gold transition-colors mb-6 block"></i>
-                        <h3 class="text-xl font-serif font-bold mb-3">Tata Kelola Publik</h3>
-                        <p class="text-zinc-400 text-sm font-light leading-relaxed">Analisis dan penerapan sistem pemerintahan yang transparan, akuntabel, dan bebas dari praktik maladministrasi.</p>
+                    <!-- Interest Block -->
+                    <div class="border border-brand-charcoalLight/30 bg-white/5 p-8 hover:bg-brand-gold hover:border-brand-gold transition-colors duration-300 group" data-aos="fade-up" data-aos-delay="50">
+                        <i class="fa-solid fa-landmark text-2xl text-brand-gold group-hover:text-brand-navy transition-colors mb-5 block"></i>
+                        <h3 class="text-xl font-serif font-bold mb-3 group-hover:text-brand-navy">Tata Kelola Pemerintahan</h3>
+                        <p class="text-brand-ivory/70 text-sm font-light leading-relaxed group-hover:text-brand-navy/90">Mendorong sistem birokrasi yang transparan, akuntabel, dan bebas dari praktik maladministrasi.</p>
                     </div>
                     
-                    <!-- Item -->
-                    <div class="border border-zinc-800 p-8 hover:border-brand-gold transition-colors duration-300 group" data-aos="fade-up" data-aos-delay="200">
-                        <i class="fa-solid fa-users-gear text-3xl text-zinc-600 group-hover:text-brand-gold transition-colors mb-6 block"></i>
-                        <h3 class="text-xl font-serif font-bold mb-3">Inovasi Pelayanan</h3>
-                        <p class="text-zinc-400 text-sm font-light leading-relaxed">Modernisasi standar operasional pelayanan masyarakat agar lebih responsif, cepat, dan mudah diakses.</p>
+                    <div class="border border-brand-charcoalLight/30 bg-white/5 p-8 hover:bg-brand-gold hover:border-brand-gold transition-colors duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fa-solid fa-file-signature text-2xl text-brand-gold group-hover:text-brand-navy transition-colors mb-5 block"></i>
+                        <h3 class="text-xl font-serif font-bold mb-3 group-hover:text-brand-navy">Kebijakan Publik</h3>
+                        <p class="text-brand-ivory/70 text-sm font-light leading-relaxed group-hover:text-brand-navy/90">Analisis formulasi, implementasi, hingga evaluasi kebijakan agar relevan dengan kebutuhan ruang publik.</p>
                     </div>
 
-                    <!-- Item -->
-                    <div class="border border-zinc-800 p-8 hover:border-brand-gold transition-colors duration-300 group" data-aos="fade-up" data-aos-delay="300">
-                        <i class="fa-solid fa-tree-city text-3xl text-zinc-600 group-hover:text-brand-gold transition-colors mb-6 block"></i>
-                        <h3 class="text-xl font-serif font-bold mb-3">Pembangunan Desa</h3>
-                        <p class="text-zinc-400 text-sm font-light leading-relaxed">Strategi pemberdayaan ekonomi lokal dan optimalisasi potensi daerah untuk mewujudkan desa yang berdaulat.</p>
+                    <div class="border border-brand-charcoalLight/30 bg-white/5 p-8 hover:bg-brand-gold hover:border-brand-gold transition-colors duration-300 group" data-aos="fade-up" data-aos-delay="150">
+                        <i class="fa-solid fa-users-gear text-2xl text-brand-gold group-hover:text-brand-navy transition-colors mb-5 block"></i>
+                        <h3 class="text-xl font-serif font-bold mb-3 group-hover:text-brand-navy">Pelayanan Publik</h3>
+                        <p class="text-brand-ivory/70 text-sm font-light leading-relaxed group-hover:text-brand-navy/90">Modernisasi dan percepatan standar layanan administratif masyarakat berbasis kemudahan akses.</p>
                     </div>
 
-                    <!-- Item -->
-                    <div class="border border-zinc-800 p-8 hover:border-brand-gold transition-colors duration-300 group" data-aos="fade-up" data-aos-delay="400">
-                        <i class="fa-solid fa-sitemap text-3xl text-zinc-600 group-hover:text-brand-gold transition-colors mb-6 block"></i>
-                        <h3 class="text-xl font-serif font-bold mb-3">Studi Pemerintahan</h3>
-                        <p class="text-zinc-400 text-sm font-light leading-relaxed">Kajian komprehensif terkait kebijakan publik, desentralisasi, dan dinamika politik lokal di Indonesia.</p>
+                    <div class="border border-brand-charcoalLight/30 bg-white/5 p-8 hover:bg-brand-gold hover:border-brand-gold transition-colors duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fa-solid fa-tree-city text-2xl text-brand-gold group-hover:text-brand-navy transition-colors mb-5 block"></i>
+                        <h3 class="text-xl font-serif font-bold mb-3 group-hover:text-brand-navy">Pembangunan Desa</h3>
+                        <p class="text-brand-ivory/70 text-sm font-light leading-relaxed group-hover:text-brand-navy/90">Strategi pengelolaan potensi pedesaan secara mandiri untuk mewujudkan kemandirian ekonomi desa.</p>
                     </div>
 
-                    <!-- Item -->
-                    <div class="border border-zinc-800 p-8 hover:border-brand-gold transition-colors duration-300 group" data-aos="fade-up" data-aos-delay="500">
-                        <i class="fa-solid fa-chess-knight text-3xl text-zinc-600 group-hover:text-brand-gold transition-colors mb-6 block"></i>
-                        <h3 class="text-xl font-serif font-bold mb-3">Kepemimpinan</h3>
-                        <p class="text-zinc-400 text-sm font-light leading-relaxed">Pengembangan karakter kepemimpinan adaptif dalam mengelola organisasi dan menyelesaikan konflik di ruang publik.</p>
+                    <div class="border border-brand-charcoalLight/30 bg-white/5 p-8 hover:bg-brand-gold hover:border-brand-gold transition-colors duration-300 group" data-aos="fade-up" data-aos-delay="250">
+                        <i class="fa-solid fa-hand-holding-heart text-2xl text-brand-gold group-hover:text-brand-navy transition-colors mb-5 block"></i>
+                        <h3 class="text-xl font-serif font-bold mb-3 group-hover:text-brand-navy">Pemberdayaan Masyarakat</h3>
+                        <p class="text-brand-ivory/70 text-sm font-light leading-relaxed group-hover:text-brand-navy/90">Meningkatkan kapasitas sosial kemasyarakatan agar mampu berpartisipasi aktif dalam pembangunan.</p>
                     </div>
 
-                    <!-- Item -->
-                    <div class="border border-zinc-800 p-8 hover:border-brand-gold transition-colors duration-300 group" data-aos="fade-up" data-aos-delay="600">
-                        <i class="fa-solid fa-handshake-angle text-3xl text-zinc-600 group-hover:text-brand-gold transition-colors mb-6 block"></i>
-                        <h3 class="text-xl font-serif font-bold mb-3">Partisipasi Masyarakat</h3>
-                        <p class="text-zinc-400 text-sm font-light leading-relaxed">Mendorong ruang kolaborasi antara pemerintah dan masyarakat warga (civil society) dalam perumusan kebijakan.</p>
+                    <div class="border border-brand-charcoalLight/30 bg-white/5 p-8 hover:bg-brand-gold hover:border-brand-gold transition-colors duration-300 group" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fa-solid fa-handshake-angle text-2xl text-brand-gold group-hover:text-brand-navy transition-colors mb-5 block"></i>
+                        <h3 class="text-xl font-serif font-bold mb-3 group-hover:text-brand-navy">Partisipasi Masyarakat</h3>
+                        <p class="text-brand-ivory/70 text-sm font-light leading-relaxed group-hover:text-brand-navy/90">Membuka ruang kolaborasi civil society dengan aparat pemerintahan dalam proses pengambilan keputusan.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- PUBLIKASI (Placeholder Elegan) -->
-        <section id="publikasi" class="py-24 bg-zinc-50 border-y border-zinc-200">
-            <div class="max-w-4xl mx-auto px-6 text-center" data-aos="fade-up">
-                <i class="fa-solid fa-book-open text-3xl text-zinc-300 mb-6"></i>
-                <h2 class="font-serif text-2xl font-bold text-brand-darker mb-4">Pemikiran & Publikasi</h2>
-                <p class="text-zinc-500 font-light mb-8">Ruang kajian akademis, opini, dan esai terkait tata kelola pemerintahan saat ini sedang dalam tahap penyusunan.</p>
-                <div class="inline-block px-6 py-2 border border-zinc-300 text-xs font-semibold uppercase tracking-widest text-zinc-400 rounded-sm">Segera Hadir!</div>
-            </div>
-        </section>
-
-        <!-- KONTAK -->
-        <section id="kontak" class="py-32 bg-white relative">
+        <!-- 8. CONTACT -->
+        <section id="kontak" class="py-24 bg-brand-ivory relative">
             <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center" data-aos="zoom-in">
-                <span class="text-zinc-500 font-semibold tracking-widest text-xs uppercase mb-2 block">Kolaborasi</span>
-                <h2 class="font-serif text-4xl text-brand-darker font-bold mb-8">Mari Terhubung & Berkolaborasi</h2>
-                <p class="text-zinc-600 mb-12 max-w-xl mx-auto font-light text-lg">
-                    Terbuka untuk diskusi akademis, peluang kerja sama strategis, maupun pembicaraan terkait tata kelola pemerintahan dan organisasi.
+                <span class="text-brand-gold font-semibold tracking-widest text-xs uppercase mb-2 block">Informasi Komunikasi</span>
+                <h2 class="font-serif text-3xl md:text-4xl text-brand-navy font-bold mb-6">Kontak Resmi</h2>
+                <p class="text-brand-charcoal mb-10 max-w-xl mx-auto font-light text-base md:text-lg">
+                    Terbuka untuk diskusi akademis, peluang kolaborasi institusi, maupun pembicaraan teknis terkait pengembangan kebijakan dan pelayanan publik.
                 </p>
                 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="https://wa.me/6283183149680" target="_blank" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-brand-dark text-white font-semibold hover:bg-brand-gold transition-colors duration-300 rounded-sm">
-                        <i class="fa-brands fa-whatsapp text-lg"></i> Hubungi Via WhatsApp
+                    <a href="https://wa.me/6283183149680" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 px-8 py-3.5 bg-brand-navy text-white font-semibold text-sm hover:bg-brand-gold hover:text-brand-navy transition-colors shadow-md">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> +62 831-8314-9680
                     </a>
-                    <a href="mailto:sopiyan.go.id@gmail.com" class="inline-flex items-center justify-center gap-3 px-8 py-4 border border-zinc-300 text-brand-darker font-semibold hover:border-brand-dark transition-colors duration-300 rounded-sm">
-                        <i class="fa-regular fa-envelope text-lg"></i> Kirim Email 
+                    <a href="mailto:sopiyan.go.id@gmail.com" class="inline-flex items-center justify-center gap-3 px-8 py-3.5 border border-brand-charcoalLight text-brand-navy font-semibold text-sm hover:border-brand-navy hover:bg-white transition-colors bg-transparent">
+                        <i class="fa-regular fa-envelope text-lg"></i> sopiyan.go.id@gmail.com
                     </a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-brand-dark text-zinc-400 py-16 border-t border-zinc-800">
+    <!-- 9. FOOTER -->
+    <footer class="bg-brand-navy text-brand-ivory/60 py-16 border-t-8 border-brand-gold">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col items-center">
             
-            <a href="#beranda" class="mb-8">
-                <img src="https://i.ibb.co.com/BVmbzyR0/logo.png" alt="Sopiyan" class="h-10 opacity-70 hover:opacity-100 transition-opacity">
+            <a href="#beranda" class="mb-8 block">
+                <!-- Watermark Logo -->
+                <img src="https://i.ibb.co.com/BVmbzyR0/logo.png" alt="Sopiyan Watermark" class="h-12 drop-shadow-md">
             </a>
 
             <!-- Social Links -->
-            <div class="flex gap-6 mb-10">
-                <a href="https://www.linkedin.com/in/sopiyan-go-id/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 border border-zinc-800 flex items-center justify-center rounded-sm hover:border-brand-gold hover:text-brand-gold transition-colors" aria-label="LinkedIn">
+            <div class="flex gap-4 mb-8">
+                <a href="https://www.linkedin.com/in/sopiyan-go-id/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 border border-white/10 flex items-center justify-center rounded hover:bg-brand-gold hover:border-brand-gold hover:text-brand-navy transition-all" aria-label="LinkedIn">
                     <i class="fa-brands fa-linkedin-in"></i>
                 </a>
-                <a href="https://www.instagram.com/iam.sopiyan" target="_blank" rel="noopener noreferrer" class="w-10 h-10 border border-zinc-800 flex items-center justify-center rounded-sm hover:border-brand-gold hover:text-brand-gold transition-colors" aria-label="Instagram">
+                <a href="https://www.instagram.com/iam.sopiyan" target="_blank" rel="noopener noreferrer" class="w-10 h-10 border border-white/10 flex items-center justify-center rounded hover:bg-brand-gold hover:border-brand-gold hover:text-brand-navy transition-all" aria-label="Instagram">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
-                <a href="https://www.tiktok.com/@hai.sopiyan" target="_blank" rel="noopener noreferrer" class="w-10 h-10 border border-zinc-800 flex items-center justify-center rounded-sm hover:border-brand-gold hover:text-brand-gold transition-colors" aria-label="TikTok">
+                <a href="https://www.tiktok.com/@hai.sopiyan" target="_blank" rel="noopener noreferrer" class="w-10 h-10 border border-white/10 flex items-center justify-center rounded hover:bg-brand-gold hover:border-brand-gold hover:text-brand-navy transition-all" aria-label="TikTok">
                     <i class="fa-brands fa-tiktok"></i>
                 </a>
-                <a href="https://id.wikipedia.org/wiki/Pengguna:Sopiyan.go.id" target="_blank" rel="noopener noreferrer" class="w-10 h-10 border border-zinc-800 flex items-center justify-center rounded-sm hover:border-brand-gold hover:text-brand-gold transition-colors" aria-label="Wikipedia">
+                <a href="https://id.wikipedia.org/wiki/Pengguna:Sopiyan.go.id" target="_blank" rel="noopener noreferrer" class="w-10 h-10 border border-white/10 flex items-center justify-center rounded hover:bg-brand-gold hover:border-brand-gold hover:text-brand-navy transition-all" aria-label="Wikipedia">
                     <i class="fa-brands fa-wikipedia-w"></i>
                 </a>
             </div>
             
-            <p class="text-xs tracking-wider uppercase font-semibold text-zinc-600 mb-2">Public Governance & Social Development</p>
-            <p class="text-xs text-zinc-600">
-                &copy; <span id="year"></span> SOPIYAN. All rights reserved.
+            <p class="text-xs md:text-sm tracking-wider uppercase font-semibold text-brand-gold mb-2 text-center">
+                Public Governance, Administration & Social Development
+            </p>
+            <p class="text-xs text-brand-ivory/40 text-center font-light">
+                &copy; <span id="year"></span> SOPIYAN. Hak Cipta Dilindungi. Dikelola sebagai Official Personal Website.
             </p>
         </div>
     </footer>
@@ -506,7 +606,7 @@
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Inisialisasi AOS (Animasi)
+        // Init Animasi AOS
         AOS.init({
             once: true,
             offset: 30,
@@ -514,16 +614,16 @@
             easing: 'ease-out-cubic',
         });
 
-        // Update Tahun Copyright
+        // Dynamic Copyright Year
         document.getElementById('year').textContent = new Date().getFullYear();
 
         // Navbar Scroll Effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                navbar.classList.add('shadow-lg', 'border-white/10');
+                navbar.classList.add('shadow-lg');
             } else {
-                navbar.classList.remove('shadow-lg', 'border-white/10');
+                navbar.classList.remove('shadow-lg');
             }
         });
 
@@ -550,10 +650,13 @@
             "alternateName": "Piyan",
             "url": "https://sopiyan-go-id.github.io",
             "image": "https://cdn.phototourl.com/member/2026-10-25-c2525906-e5d8-4a15-b314-a14c5eb94846.jpg",
-            "jobTitle": "Ketua Ormawa",
+            "jobTitle": [
+                "Kepala Seksi Pelayanan di Pemerintah Kabupaten Lampung Selatan",
+                "Ketua Ormawa Universitas Terbuka Salut Kalianda"
+            ],
             "worksFor": {
-                "@type": "Organization",
-                "name": "Universitas Terbuka Salut Kalianda"
+                "@type": "GovernmentOrganization",
+                "name": "Pemerintah Kabupaten Lampung Selatan"
             },
             "alumniOf": [
                 {
