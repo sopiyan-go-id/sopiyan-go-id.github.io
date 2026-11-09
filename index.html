@@ -665,7 +665,7 @@
     </div>
 </div>
 
-<!-- SKRIP INTEGRASI CMS OTOMATIS PARAGRAF -->
+<!-- SKRIP INTEGRASI CMS DENGAN FOTO UTuh (TIDAK TERPOTONG) -->
 <script>
 document.addEventListener("DOMContentLoaded", async () => {
     try {
@@ -699,14 +699,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     } catch (error) { console.log("Menunggu konten dari CMS..."); }
 });
 
-// Fungsi untuk Membuka Modal Berita dan Otomatis Format Paragraf
+// Fungsi untuk Membuka Modal Berita dengan Foto Utuh Proporsional
 function bukaModalBerita(item) {
     const modal = document.getElementById('modal-berita');
     const content = document.getElementById('modal-content');
     
     const tanggalFormatted = new Date(item.tanggal).toLocaleDateString('id-ID', {day: 'numeric', month: 'long', year: 'numeric'});
     
-    // 🔥 Otomatis mendeteksi teks atau enter dari admin dan menjadikannya tag paragraf <p>
     let isiFormatted = item.isi;
     if (!isiFormatted.includes('<p>')) {
         isiFormatted = isiFormatted.split('\n\n').map(p => `<p>${p}</p>`).join('');
@@ -719,7 +718,8 @@ function bukaModalBerita(item) {
             <span><i class="fa-regular fa-calendar mr-1"></i> ${tanggalFormatted}</span>
             <span><i class="fa-solid fa-location-dot mr-1"></i> ${item.lokasi}</span>
         </div>
-        <img src="${item.foto.replace('/assets/', './assets/')}" alt="${item.judul}" class="w-full h-64 object-cover mb-6 border border-black/10 shadow-sm">
+        <!-- Foto tampil utuh menyesuaikan bentuk aslinya secara proporsional -->
+        <img src="${item.foto.replace('/assets/', './assets/')}" alt="${item.judul}" class="w-full h-auto max-h-[500px] object-contain mb-6 border border-black/10 shadow-sm bg-black/5">
         <div class="text-brand-charcoal text-base font-light leading-relaxed space-y-4">
             ${isiFormatted}
         </div>
@@ -729,14 +729,12 @@ function bukaModalBerita(item) {
     document.body.style.overflow = 'hidden';
 }
 
-// Fungsi untuk Menutup Modal
 function tutupModal() {
     const modal = document.getElementById('modal-berita');
     modal.classList.add('hidden');
     document.body.style.overflow = 'auto';
 }
 
-// Tutup modal jika klik di luar kotak
 window.addEventListener('click', (e) => {
     const modal = document.getElementById('modal-berita');
     if (e.target === modal) {
