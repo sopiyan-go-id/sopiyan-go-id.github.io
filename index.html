@@ -683,5 +683,39 @@
         script.text = JSON.stringify(schemaData);
         document.head.appendChild(script);
     </script>
+    <!-- SKRIP INTEGRASI CMS -->
+<script>
+document.addEventListener("DOMContentLoaded", async () => {
+    try {
+        const response = await fetch('./data/berita.json');
+        if (!response.ok) return; 
+        
+        const data = await response.json();
+        const artikelTerbit = data.artikel.filter(item => item.status === "Terbit");
+        
+        const wadahGrid = document.querySelector('.grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-3');
+        if (wadahGrid && artikelTerbit.length > 0) {
+            wadahGrid.innerHTML = artikelTerbit.map(item => `
+                <article class="editorial-article border border-black/5 bg-white group hover-lift flex flex-col">
+                    <figure class="editorial-img-container h-48 m-0 relative">
+                        <img src="${item.foto.replace('/assets/', './assets/')}" alt="${item.judul}" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-white text-brand-navy text-[10px] font-bold px-2 py-1 uppercase tracking-wider border border-black/10">
+                            ${item.kategori}
+                        </div>
+                    </figure>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <time class="text-[11px] text-brand-charcoalLight font-medium mb-3 block">${new Date(item.tanggal).toLocaleDateString('id-ID')}</time>
+                        <h3 class="font-serif text-lg font-bold text-brand-navy leading-snug mb-3 group-hover:text-brand-gold transition-colors">
+                            <a href="#${item.slug}">${item.judul.toUpperCase()}</a>
+                        </h3>
+                        <p class="text-brand-charcoal text-sm font-light leading-relaxed mb-6 flex-grow">${item.ringkasan}</p>
+                        <a href="#${item.slug}" class="text-xs font-semibold text-brand-gold hover:text-brand-navy mt-auto">Baca &rarr;</a>
+                    </div>
+                </article>
+            `).join('');
+        }
+    } catch (error) { console.log("Menunggu konten dari CMS..."); }
+});
+</script>
 </body>
 </html>
