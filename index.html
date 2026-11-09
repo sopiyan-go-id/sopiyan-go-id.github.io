@@ -698,7 +698,7 @@
     </div>
 </div>
 
-<!-- SKRIP INTEGRASI CMS DENGAN MODAL PARAGRAF -->
+<!-- SKRIP INTEGRASI CMS OTOMATIS PARAGRAF -->
 <script>
 document.addEventListener("DOMContentLoaded", async () => {
     try {
@@ -732,13 +732,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     } catch (error) { console.log("Menunggu konten dari CMS..."); }
 });
 
-// Fungsi untuk Membuka Modal Berita
+// Fungsi untuk Membuka Modal Berita dan Otomatis Format Paragraf
 function bukaModalBerita(item) {
     const modal = document.getElementById('modal-berita');
     const content = document.getElementById('modal-content');
     
     const tanggalFormatted = new Date(item.tanggal).toLocaleDateString('id-ID', {day: 'numeric', month: 'long', year: 'numeric'});
     
+    // 🔥 Otomatis mendeteksi teks atau enter dari admin dan menjadikannya tag paragraf <p>
+    let isiFormatted = item.isi;
+    if (!isiFormatted.includes('<p>')) {
+        isiFormatted = isiFormatted.split('\n\n').map(p => `<p>${p}</p>`).join('');
+    }
+
     content.innerHTML = `
         <span class="text-xs font-bold text-brand-gold uppercase tracking-widest block mb-2">${item.kategori}</span>
         <h2 class="font-serif text-2xl md:text-3xl font-bold text-brand-navy leading-tight mb-4">${item.judul}</h2>
@@ -747,8 +753,8 @@ function bukaModalBerita(item) {
             <span><i class="fa-solid fa-location-dot mr-1"></i> ${item.lokasi}</span>
         </div>
         <img src="${item.foto.replace('/assets/', './assets/')}" alt="${item.judul}" class="w-full h-64 object-cover mb-6 border border-black/10 shadow-sm">
-        <div class="text-brand-charcoal text-base font-light leading-relaxed space-y-4 prose">
-            ${item.isi}
+        <div class="text-brand-charcoal text-base font-light leading-relaxed space-y-4">
+            ${isiFormatted}
         </div>
     `;
     
