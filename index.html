@@ -109,6 +109,29 @@
         .editorial-img-container { overflow: hidden; }
         .editorial-img-container img { transition: transform 0.7s ease; }
         .editorial-article:hover .editorial-img-container img { transform: scale(1.05); }
+
+        /* News Carousel */
+        .berita-viewport {
+            overflow: hidden;
+            transition: height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .berita-track {
+            display: flex;
+            align-items: flex-start;
+            transition: transform 0.55s cubic-bezier(0.25, 0.8, 0.25, 1);
+            will-change: transform;
+        }
+        .berita-excerpt {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            -webkit-line-clamp: 2;
+        }
+        @media (min-width: 768px) {
+            .berita-excerpt {
+                -webkit-line-clamp: 4;
+            }
+        }
     </style>
 </head>
 <body class="text-brand-charcoal antialiased relative">
@@ -378,12 +401,12 @@
             </div>
         </section>
 
-        <!-- 5. NEWS & ACTIVITIES (Editorial Style) -->
+        <!-- 5. NEWS & ACTIVITIES (Modern News Carousel) -->
         <section id="berita" class="py-24 bg-white">
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
                 
                 <!-- Section Header -->
-                <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-12 border-b border-brand-navy/10 pb-6" data-aos="fade-up">
+                <div class="flex flex-col md:flex-row md:justify-between md:items-end mb-10 border-b border-brand-navy/10 pb-6" data-aos="fade-up">
                     <div>
                         <span class="text-brand-gold font-semibold tracking-widest text-xs uppercase mb-2 block">Dokumentasi & Publikasi</span>
                         <h2 class="font-serif text-3xl md:text-4xl text-brand-navy font-bold">Berita & Kegiatan Sopiyan</h2>
@@ -398,68 +421,138 @@
                     </div>
                 </div>
 
-                <!-- Grid News Articles -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- News Carousel -->
+                <div id="berita-carousel" class="relative" aria-roledescription="carousel" aria-label="Carousel Berita dan Kegiatan Sopiyan">
                     
-                    <!-- Article 2 -->
-                    <article class="editorial-article border border-black/5 bg-white group hover-lift flex flex-col" data-aos="fade-up" data-aos-delay="100">
-                        <figure class="editorial-img-container h-48 m-0 relative">
-                            <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=800&q=80" alt="Kegiatan Organisasi" class="w-full h-full object-cover">
-                            <div class="absolute top-4 left-4 bg-white text-brand-navy text-[10px] font-bold px-2 py-1 uppercase tracking-wider border border-black/10">
-                                Organisasi
-                            </div>
-                        </figure>
-                        <div class="p-6 flex flex-col flex-grow">
-                            <time datetime="2026-10-25" class="text-[11px] text-brand-charcoalLight font-medium mb-3 block">25 Okt 2026</time>
-                            <h3 class="font-serif text-lg font-bold text-brand-navy leading-snug mb-3 group-hover:text-brand-gold transition-colors">
-                                <a href="#detail-berita-2">SOPIYAN MENGHADIRI KEGIATAN ORGANISASI KEMAHASISWAAN</a>
-                            </h3>
-                            <p class="text-brand-charcoal text-sm font-light leading-relaxed mb-6 flex-grow">
-                                Konsolidasi program kerja organisasi dalam rangka merumuskan agenda strategis pengabdian mahasiswa kepada masyarakat.
-                            </p>
-                            <a href="#detail-berita-2" class="text-xs font-semibold text-brand-gold hover:text-brand-navy transition-colors mt-auto">Membaca Artikel &rarr;</a>
-                        </div>
-                    </article>
+                    <div class="relative flex items-center md:gap-4 lg:gap-6">
+                        
+                        <!-- Left Arrow (Desktop & Tablet) -->
+                        <button
+                            type="button"
+                            id="berita-prev-btn"
+                            class="hidden md:flex shrink-0 w-11 h-11 lg:w-12 lg:h-12 rounded-full bg-white text-brand-navy border-2 border-brand-navy/20 shadow-[0_4px_14px_rgba(23,35,51,0.12)] ring-4 ring-white items-center justify-center transition-all duration-300 ease-out hover:bg-brand-navy hover:text-brand-gold hover:border-brand-gold hover:scale-110 hover:shadow-[0_8px_20px_rgba(23,35,51,0.18)] active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold disabled:opacity-30 disabled:cursor-not-allowed disabled:pointer-events-none"
+                            aria-label="Berita sebelumnya">
+                            <i class="fa-solid fa-chevron-left text-sm lg:text-base"></i>
+                        </button>
 
-                    <!-- Article 3 -->
-                    <article class="editorial-article border border-black/5 bg-white group hover-lift flex flex-col" data-aos="fade-up" data-aos-delay="200">
-                        <figure class="editorial-img-container h-48 m-0 relative">
-                            <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80" alt="Pengembangan Kapasitas" class="w-full h-full object-cover">
-                            <div class="absolute top-4 left-4 bg-white text-brand-navy text-[10px] font-bold px-2 py-1 uppercase tracking-wider border border-black/10">
-                                Akademik
-                            </div>
-                        </figure>
-                        <div class="p-6 flex flex-col flex-grow">
-                            <time datetime="2026-10-10" class="text-[11px] text-brand-charcoalLight font-medium mb-3 block">10 Okt 2026</time>
-                            <h3 class="font-serif text-lg font-bold text-brand-navy leading-snug mb-3 group-hover:text-brand-gold transition-colors">
-                                <a href="#detail-berita-3">SOPIYAN MENGIKUTI KEGIATAN PENGEMBANGAN KAPASITAS</a>
-                            </h3>
-                            <p class="text-brand-charcoal text-sm font-light leading-relaxed mb-6 flex-grow">
-                                Peningkatan kompetensi kepemimpinan dan manajerial sebagai wujud nyata filosofi Vidya (Ilmu) dan Nayatva (Kepemimpinan).
-                            </p>
-                            <a href="#detail-berita-3" class="text-xs font-semibold text-brand-gold hover:text-brand-navy transition-colors mt-auto">Membaca Artikel &rarr;</a>
-                        </div>
-                    </article>
+                        <!-- Sliding Viewport -->
+                        <div id="berita-viewport" class="berita-viewport w-full flex-1 min-w-0">
+                            <div id="berita-track" class="berita-track">
+                                
+                                <!-- Fallback Slide (Otomatis digantikan CMS berita.json saat tersedia) -->
+                                <div class="berita-slide w-full flex-shrink-0 py-3 px-1.5">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7 items-stretch">
+                                        
+                                        <!-- Article 2 -->
+                                        <article class="editorial-article border border-black/5 rounded-lg overflow-hidden bg-white group hover-lift flex flex-col h-full shadow-sm">
+                                            <figure class="editorial-img-container h-40 sm:h-48 m-0 relative shrink-0 bg-brand-ivory/40">
+                                                <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=800&q=80" alt="Kegiatan Organisasi" class="w-full h-full object-cover">
+                                                <div class="absolute top-3.5 left-3.5 bg-white/95 text-brand-navy text-[10px] font-bold px-2.5 py-1 uppercase tracking-wider border border-black/10 rounded-sm shadow-sm">
+                                                    Organisasi
+                                                </div>
+                                            </figure>
+                                            <div class="p-4 sm:p-6 flex flex-col flex-grow">
+                                                <time datetime="2026-10-25" class="text-[11px] text-brand-charcoalLight font-medium mb-2 block">25 Okt 2026</time>
+                                                <h3 class="font-serif text-base sm:text-[17px] font-bold text-brand-navy leading-snug mb-2.5 sm:mb-3 group-hover:text-brand-gold transition-colors">
+                                                    <a href="#detail-berita-2">SOPIYAN MENGHADIRI KEGIATAN ORGANISASI KEMAHASISWAAN</a>
+                                                </h3>
+                                                <p class="berita-excerpt text-brand-charcoal text-sm font-light leading-relaxed mb-4 sm:mb-5 flex-grow">
+                                                    Konsolidasi program kerja organisasi dalam rangka merumuskan agenda strategis pengabdian mahasiswa kepada masyarakat.
+                                                </p>
+                                                <a href="#detail-berita-2" class="text-xs font-semibold text-brand-gold hover:text-brand-navy transition-colors mt-auto inline-flex items-center gap-1.5">
+                                                    <span>Baca</span> <i class="fa-solid fa-arrow-right-long"></i>
+                                                </a>
+                                            </div>
+                                        </article>
 
-                    <!-- Article 4 -->
-                    <article class="editorial-article border border-black/5 bg-white group hover-lift flex flex-col" data-aos="fade-up" data-aos-delay="300">
-                        <figure class="editorial-img-container h-48 m-0 relative">
-                            <img src="https://images.unsplash.com/photo-1593113563332-ce147fc24d38?auto=format&fit=crop&w=800&q=80" alt="Pelayanan Masyarakat" class="w-full h-full object-cover">
-                            <div class="absolute top-4 left-4 bg-white text-brand-navy text-[10px] font-bold px-2 py-1 uppercase tracking-wider border border-black/10">
-                                Pengabdian
+                                        <!-- Article 3 -->
+                                        <article class="editorial-article border border-black/5 rounded-lg overflow-hidden bg-white group hover-lift flex flex-col h-full shadow-sm">
+                                            <figure class="editorial-img-container h-40 sm:h-48 m-0 relative shrink-0 bg-brand-ivory/40">
+                                                <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80" alt="Pengembangan Kapasitas" class="w-full h-full object-cover">
+                                                <div class="absolute top-3.5 left-3.5 bg-white/95 text-brand-navy text-[10px] font-bold px-2.5 py-1 uppercase tracking-wider border border-black/10 rounded-sm shadow-sm">
+                                                    Akademik
+                                                </div>
+                                            </figure>
+                                            <div class="p-4 sm:p-6 flex flex-col flex-grow">
+                                                <time datetime="2026-10-10" class="text-[11px] text-brand-charcoalLight font-medium mb-2 block">10 Okt 2026</time>
+                                                <h3 class="font-serif text-base sm:text-[17px] font-bold text-brand-navy leading-snug mb-2.5 sm:mb-3 group-hover:text-brand-gold transition-colors">
+                                                    <a href="#detail-berita-3">SOPIYAN MENGIKUTI KEGIATAN PENGEMBANGAN KAPASITAS</a>
+                                                </h3>
+                                                <p class="berita-excerpt text-brand-charcoal text-sm font-light leading-relaxed mb-4 sm:mb-5 flex-grow">
+                                                    Peningkatan kompetensi kepemimpinan dan manajerial sebagai wujud nyata filosofi Vidya (Ilmu) dan Nayatva (Kepemimpinan).
+                                                </p>
+                                                <a href="#detail-berita-3" class="text-xs font-semibold text-brand-gold hover:text-brand-navy transition-colors mt-auto inline-flex items-center gap-1.5">
+                                                    <span>Baca</span> <i class="fa-solid fa-arrow-right-long"></i>
+                                                </a>
+                                            </div>
+                                        </article>
+
+                                        <!-- Article 4 -->
+                                        <article class="editorial-article border border-black/5 rounded-lg overflow-hidden bg-white group hover-lift flex flex-col h-full shadow-sm">
+                                            <figure class="editorial-img-container h-40 sm:h-48 m-0 relative shrink-0 bg-brand-ivory/40">
+                                                <img src="https://images.unsplash.com/photo-1593113563332-ce147fc24d38?auto=format&fit=crop&w=800&q=80" alt="Pelayanan Masyarakat" class="w-full h-full object-cover">
+                                                <div class="absolute top-3.5 left-3.5 bg-white/95 text-brand-navy text-[10px] font-bold px-2.5 py-1 uppercase tracking-wider border border-black/10 rounded-sm shadow-sm">
+                                                    Pengabdian
+                                                </div>
+                                            </figure>
+                                            <div class="p-4 sm:p-6 flex flex-col flex-grow">
+                                                <time datetime="2026-09-15" class="text-[11px] text-brand-charcoalLight font-medium mb-2 block">15 Sep 2026</time>
+                                                <h3 class="font-serif text-base sm:text-[17px] font-bold text-brand-navy leading-snug mb-2.5 sm:mb-3 group-hover:text-brand-gold transition-colors">
+                                                    <a href="#detail-berita-4">SOPIYAN TERLIBAT DALAM KEGIATAN PELAYANAN MASYARAKAT</a>
+                                                </h3>
+                                                <p class="berita-excerpt text-brand-charcoal text-sm font-light leading-relaxed mb-4 sm:mb-5 flex-grow">
+                                                    Dedikasi secara langsung dalam memfasilitasi kebutuhan administrasi warga serta memberikan penyuluhan terkait program pemerintah.
+                                                </p>
+                                                <a href="#detail-berita-4" class="text-xs font-semibold text-brand-gold hover:text-brand-navy transition-colors mt-auto inline-flex items-center gap-1.5">
+                                                    <span>Baca</span> <i class="fa-solid fa-arrow-right-long"></i>
+                                                </a>
+                                            </div>
+                                        </article>
+
+                                    </div>
+                                </div>
+
                             </div>
-                        </figure>
-                        <div class="p-6 flex flex-col flex-grow">
-                            <time datetime="2026-09-15" class="text-[11px] text-brand-charcoalLight font-medium mb-3 block">15 Sep 2026</time>
-                            <h3 class="font-serif text-lg font-bold text-brand-navy leading-snug mb-3 group-hover:text-brand-gold transition-colors">
-                                <a href="#detail-berita-4">SOPIYAN TERLIBAT DALAM KEGIATAN PELAYANAN MASYARAKAT</a>
-                            </h3>
-                            <p class="text-brand-charcoal text-sm font-light leading-relaxed mb-6 flex-grow">
-                                Dedikasi secara langsung dalam memfasilitasi kebutuhan administrasi warga serta memberikan penyuluhan terkait program pemerintah.
-                            </p>
-                            <a href="#detail-berita-4" class="text-xs font-semibold text-brand-gold hover:text-brand-navy transition-colors mt-auto">Membaca Artikel &rarr;</a>
                         </div>
-                    </article>
+
+                        <!-- Right Arrow (Desktop & Tablet) -->
+                        <button
+                            type="button"
+                            id="berita-next-btn"
+                            class="hidden md:flex shrink-0 w-11 h-11 lg:w-12 lg:h-12 rounded-full bg-white text-brand-navy border-2 border-brand-navy/20 shadow-[0_4px_14px_rgba(23,35,51,0.12)] ring-4 ring-white items-center justify-center transition-all duration-300 ease-out hover:bg-brand-navy hover:text-brand-gold hover:border-brand-gold hover:scale-110 hover:shadow-[0_8px_20px_rgba(23,35,51,0.18)] active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold disabled:opacity-30 disabled:cursor-not-allowed disabled:pointer-events-none"
+                            aria-label="Berita berikutnya">
+                            <i class="fa-solid fa-chevron-right text-sm lg:text-base"></i>
+                        </button>
+
+                    </div>
+
+                    <!-- Controls Footer: Mobile Arrows + Slide Dots & Counter -->
+                    <div class="mt-7 flex flex-col items-center gap-3">
+                        <div class="w-full flex items-center justify-between md:justify-center gap-4">
+                            <!-- Left Arrow (Smartphone) -->
+                            <button
+                                type="button"
+                                id="berita-prev-btn-mobile"
+                                class="flex md:hidden shrink-0 w-11 h-11 rounded-full bg-white text-brand-navy border-2 border-brand-navy/20 shadow-md items-center justify-center transition-all duration-300 hover:bg-brand-navy hover:text-brand-gold hover:border-brand-gold active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold disabled:opacity-30 disabled:cursor-not-allowed disabled:pointer-events-none"
+                                aria-label="Berita sebelumnya">
+                                <i class="fa-solid fa-chevron-left text-sm"></i>
+                            </button>
+
+                            <!-- Slide Dots -->
+                            <div id="berita-dots" class="flex items-center justify-center gap-2 flex-wrap" role="tablist" aria-label="Navigasi halaman berita"></div>
+
+                            <!-- Right Arrow (Smartphone) -->
+                            <button
+                                type="button"
+                                id="berita-next-btn-mobile"
+                                class="flex md:hidden shrink-0 w-11 h-11 rounded-full bg-white text-brand-navy border-2 border-brand-navy/20 shadow-md items-center justify-center transition-all duration-300 hover:bg-brand-navy hover:text-brand-gold hover:border-brand-gold active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold disabled:opacity-30 disabled:cursor-not-allowed disabled:pointer-events-none"
+                                aria-label="Berita berikutnya">
+                                <i class="fa-solid fa-chevron-right text-sm"></i>
+                            </button>
+                        </div>
+
+                        <p id="berita-status-info" class="text-xs text-brand-charcoalLight font-medium tracking-wide text-center"></p>
+                    </div>
 
                 </div>
             </div>
@@ -650,10 +743,11 @@
         script.text = JSON.stringify(schemaData);
         document.head.appendChild(script);
     </script>
+
 <!-- MODAL CONTAINER UNTUK DETAIL BERITA -->
-<div id="modal-berita" class="fixed inset-0 z-50 hidden bg-brand-navy/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
+<div id="modal-berita" class="fixed inset-0 z-[60] hidden bg-brand-navy/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
     <div class="bg-brand-ivory border border-brand-gold/30 max-w-2xl w-full max-h-[90vh] overflow-y-auto p-8 relative shadow-2xl">
-        <button onclick="tutupModal()" class="absolute top-4 right-4 text-brand-navy hover:text-brand-gold text-2xl font-bold focus:outline-none">&times;</button>
+        <button onclick="tutupModal()" class="absolute top-4 right-4 text-brand-navy hover:text-brand-gold text-2xl font-bold focus:outline-none" aria-label="Tutup">&times;</button>
         
         <div id="modal-content">
             <!-- Isi berita akan dimuat secara dinamis di sini -->
@@ -665,82 +759,444 @@
     </div>
 </div>
 
-<!-- SKRIP INTEGRASI CMS OTOMATIS (ANTI-CACHE) -->
+<!-- SKRIP INTEGRASI CMS OTOMATIS (ANTI-CACHE) & NEWS CAROUSEL -->
 <script>
-document.addEventListener("DOMContentLoaded", async () => {
-    try {
-        // Menggunakan parameter waktu agar data terbaru dari admin langsung terbaca tanpa cache
-        const response = await fetch('./data/berita.json?t=' + new Date().getTime());
-        if (!response.ok) return; 
-        
-        const data = await response.json();
-        const artikelTerbit = data.artikel.filter(item => item.status === "Terbit");
-        
-        const wadahGrid = document.querySelector('.grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-3');
-        if (wadahGrid && artikelTerbit.length > 0) {
-            wadahGrid.innerHTML = artikelTerbit.map(item => `
-                <article class="editorial-article border border-black/5 bg-white group hover-lift flex flex-col">
-                    <figure class="editorial-img-container h-48 m-0 relative">
-                        <img src="${item.foto.replace('/assets/', './assets/')}" alt="${item.judul}" class="w-full h-full object-cover">
-                        <div class="absolute top-4 left-4 bg-white text-brand-navy text-[10px] font-bold px-2 py-1 uppercase tracking-wider border border-black/10">
-                            ${item.kategori}
-                        </div>
-                    </figure>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <time class="text-[11px] text-brand-charcoalLight font-medium mb-3 block">${new Date(item.tanggal).toLocaleDateString('id-ID', {day: 'numeric', month: 'short', year: 'numeric'})}</time>
-                        <h3 class="font-serif text-lg font-bold text-brand-navy leading-snug mb-3 group-hover:text-brand-gold transition-colors cursor-pointer" onclick='bukaModalBerita(${JSON.stringify(item)})'>
-                            ${item.judul.toUpperCase()}
-                        </h3>
-                        <p class="text-brand-charcoal text-sm font-light leading-relaxed mb-6 flex-grow">${item.ringkasan}</p>
-                        <a href="javascript:void(0);" onclick='bukaModalBerita(${JSON.stringify(item)})' class="text-xs font-semibold text-brand-gold hover:text-brand-navy mt-auto inline-block cursor-pointer">Baca &rarr;</a>
-                    </div>
-                </article>
-            `).join('');
+(() => {
+    let daftarBerita = [];
+    let fallbackCards = [];
+    let usingFallback = false;
+    let currentSlideIndex = 0;
+    let totalSlides = 1;
+    let itemsPerSlide = 6;
+    let slideResizeObserver = null;
+    let resizeTimer = null;
+
+    const carouselEl = document.getElementById('berita-carousel');
+    const viewportEl = document.getElementById('berita-viewport');
+    const trackEl = document.getElementById('berita-track');
+    const dotsEl = document.getElementById('berita-dots');
+    const statusEl = document.getElementById('berita-status-info');
+    const prevBtn = document.getElementById('berita-prev-btn');
+    const nextBtn = document.getElementById('berita-next-btn');
+    const prevBtnMobile = document.getElementById('berita-prev-btn-mobile');
+    const nextBtnMobile = document.getElementById('berita-next-btn-mobile');
+
+    function getItemsPerSlide() {
+        if (window.innerWidth >= 1024) return 6; // Desktop: maksimal 6 berita (3 kolom x 2 baris)
+        if (window.innerWidth >= 768) return 4;  // Tablet: 4 berita (2 kolom x 2 baris)
+        return 2;                                // Smartphone: 2 berita per slide
+    }
+
+    function escapeHtml(str) {
+        return String(str ?? '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
+
+    function parseTanggalBerita(tanggalStr) {
+        if (!tanggalStr) return new Date(0);
+        const trimmed = String(tanggalStr).trim();
+        const dateOnly = trimmed.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+        if (dateOnly) {
+            return new Date(Number(dateOnly[1]), Number(dateOnly[2]) - 1, Number(dateOnly[3]));
         }
-    } catch (error) { console.log("Menunggu konten dari CMS..."); }
-});
-
-// Fungsi untuk Membuka Modal Berita
-function bukaModalBerita(item) {
-    const modal = document.getElementById('modal-berita');
-    const content = document.getElementById('modal-content');
-    
-    const tanggalFormatted = new Date(item.tanggal).toLocaleDateString('id-ID', {day: 'numeric', month: 'long', year: 'numeric'});
-    
-    let isiFormatted = item.isi;
-    if (!isiFormatted.includes('<p>')) {
-        isiFormatted = isiFormatted.split('\n\n').map(p => `<p>${p}</p>`).join('');
+        const dateTime = trimmed.match(/^(\d{4})-(\d{2})-(\d{2})[T\s](\d{2}):(\d{2})(?::(\d{2}))?/);
+        if (dateTime && !/[Zz]|[+-]\d{2}:?\d{2}$/.test(trimmed)) {
+            return new Date(
+                Number(dateTime[1]),
+                Number(dateTime[2]) - 1,
+                Number(dateTime[3]),
+                Number(dateTime[4]),
+                Number(dateTime[5]),
+                Number(dateTime[6] || 0)
+            );
+        }
+        const parsed = new Date(trimmed);
+        return isNaN(parsed.getTime()) ? new Date(0) : parsed;
     }
 
-    content.innerHTML = `
-        <span class="text-xs font-bold text-brand-gold uppercase tracking-widest block mb-2">${item.kategori}</span>
-        <h2 class="font-serif text-2xl md:text-3xl font-bold text-brand-navy leading-tight mb-4">${item.judul}</h2>
-        <div class="flex items-center gap-4 text-xs text-brand-charcoalLight font-medium mb-6 pb-4 border-b border-brand-charcoalLight/20">
-            <span><i class="fa-regular fa-calendar mr-1"></i> ${tanggalFormatted}</span>
-            <span><i class="fa-solid fa-location-dot mr-1"></i> ${item.lokasi}</span>
-        </div>
-        <img src="${item.foto.replace('/assets/', './assets/')}" alt="${item.judul}" class="w-full h-auto max-h-[500px] object-contain mb-6 border border-black/10 shadow-sm bg-black/5">
-        <div class="text-brand-charcoal text-base font-light leading-relaxed space-y-4">
-            ${isiFormatted}
-        </div>
-    `;
-    
-    modal.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-}
-
-function tutupModal() {
-    const modal = document.getElementById('modal-berita');
-    modal.classList.add('hidden');
-    document.body.style.overflow = 'auto';
-}
-
-window.addEventListener('click', (e) => {
-    const modal = document.getElementById('modal-berita');
-    if (e.target === modal) {
-        tutupModal();
+    function formatTanggalBerita(tanggalStr, monthStyle) {
+        if (!tanggalStr) return '';
+        const date = parseTanggalBerita(tanggalStr);
+        if (isNaN(date.getTime()) || date.getTime() === 0) return String(tanggalStr);
+        return date.toLocaleDateString('id-ID', {
+            day: 'numeric',
+            month: monthStyle,
+            year: 'numeric'
+        });
     }
-});
+
+    function resolveFotoUrl(foto) {
+        if (!foto) return '';
+        return String(foto).replace(/^\/assets\//, './assets/');
+    }
+
+    function syncViewportHeight(animate = true) {
+        if (!viewportEl || !trackEl) return;
+        const slides = trackEl.querySelectorAll('.berita-slide');
+        const activeSlide = slides[currentSlideIndex];
+        if (!activeSlide) return;
+
+        if (!animate) {
+            viewportEl.style.transition = 'none';
+        } else {
+            viewportEl.style.transition = 'height 0.45s cubic-bezier(0.4, 0, 0.2, 1)';
+        }
+
+        const targetHeight = activeSlide.offsetHeight;
+        if (targetHeight > 0) {
+            viewportEl.style.height = targetHeight + 'px';
+        }
+
+        if (!animate) {
+            void viewportEl.offsetHeight;
+            viewportEl.style.transition = 'height 0.45s cubic-bezier(0.4, 0, 0.2, 1)';
+        }
+    }
+
+    function observeSlides() {
+        if (!window.ResizeObserver || !trackEl) return;
+        if (slideResizeObserver) slideResizeObserver.disconnect();
+
+        slideResizeObserver = new ResizeObserver(() => {
+            syncViewportHeight(false);
+        });
+
+        trackEl.querySelectorAll('.berita-slide').forEach(slide => {
+            slideResizeObserver.observe(slide);
+        });
+    }
+
+    function updateNavigationUI() {
+        const isFirst = currentSlideIndex <= 0;
+        const isLast = currentSlideIndex >= totalSlides - 1;
+
+        [prevBtn, prevBtnMobile].forEach(btn => {
+            if (!btn) return;
+            btn.disabled = isFirst;
+            btn.setAttribute('aria-disabled', String(isFirst));
+        });
+
+        [nextBtn, nextBtnMobile].forEach(btn => {
+            if (!btn) return;
+            btn.disabled = isLast;
+            btn.setAttribute('aria-disabled', String(isLast));
+        });
+
+        if (dotsEl) {
+            const buttons = dotsEl.querySelectorAll('button[data-slide]');
+            buttons.forEach((dot, idx) => {
+                const isActive = idx === currentSlideIndex;
+                dot.setAttribute('aria-selected', String(isActive));
+                dot.className = isActive
+                    ? 'h-2 w-7 rounded-full bg-brand-gold transition-all duration-300 cursor-pointer focus:outline-none'
+                    : 'h-2 w-2 rounded-full bg-brand-navy/20 hover:bg-brand-navy/45 transition-all duration-300 cursor-pointer focus:outline-none';
+            });
+        }
+
+        if (statusEl) {
+            const totalItems = usingFallback ? fallbackCards.length : daftarBerita.length;
+            if (totalItems > 0) {
+                const startItem = currentSlideIndex * itemsPerSlide + 1;
+                const endItem = Math.min((currentSlideIndex + 1) * itemsPerSlide, totalItems);
+                statusEl.textContent = `Menampilkan ${startItem}–${endItem} dari ${totalItems} berita • Halaman ${currentSlideIndex + 1} dari ${totalSlides}`;
+            } else {
+                statusEl.textContent = '';
+            }
+        }
+    }
+
+    function renderDots() {
+        if (!dotsEl) return;
+        if (totalSlides <= 1) {
+            dotsEl.innerHTML = '';
+            return;
+        }
+
+        dotsEl.innerHTML = Array.from({ length: totalSlides }, (_, idx) => `
+            <button
+                type="button"
+                role="tab"
+                data-slide="${idx}"
+                aria-label="Halaman berita ${idx + 1}"
+                aria-selected="${idx === currentSlideIndex}">
+            </button>
+        `).join('');
+
+        dotsEl.querySelectorAll('button[data-slide]').forEach(dot => {
+            dot.addEventListener('click', () => {
+                goToSlide(Number(dot.dataset.slide));
+            });
+        });
+    }
+
+    function goToSlide(index, animate = true) {
+        if (!trackEl) return;
+        const clampedIndex = Math.max(0, Math.min(index, totalSlides - 1));
+        currentSlideIndex = clampedIndex;
+
+        if (!animate) {
+            trackEl.style.transition = 'none';
+        } else {
+            trackEl.style.transition = 'transform 0.55s cubic-bezier(0.25, 0.8, 0.25, 1)';
+        }
+
+        trackEl.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+
+        if (!animate) {
+            void trackEl.offsetHeight;
+            trackEl.style.transition = 'transform 0.55s cubic-bezier(0.25, 0.8, 0.25, 1)';
+        }
+
+        updateNavigationUI();
+        syncViewportHeight(animate);
+    }
+
+    function createCardHtml(item, globalIndex) {
+        const fotoUrl = escapeHtml(resolveFotoUrl(item.foto));
+        const kategori = escapeHtml(item.kategori);
+        const judul = escapeHtml(String(item.judul || '').toUpperCase());
+        const ringkasan = escapeHtml(item.ringkasan);
+        const tanggalText = escapeHtml(formatTanggalBerita(item.tanggal, 'short'));
+        const tanggalAttr = escapeHtml(item.tanggal || '');
+        const imgLoading = globalIndex < 12 ? 'eager' : 'lazy';
+
+        return `
+            <article class="editorial-article border border-black/5 rounded-lg overflow-hidden bg-white group hover-lift flex flex-col h-full shadow-sm">
+                <figure class="editorial-img-container h-40 sm:h-48 m-0 relative shrink-0 bg-brand-ivory/40">
+                    <img src="${fotoUrl}" alt="${judul}" class="w-full h-full object-cover" loading="${imgLoading}" decoding="async">
+                    <div class="absolute top-3.5 left-3.5 bg-white/95 backdrop-blur-sm text-brand-navy text-[10px] font-bold px-2.5 py-1 uppercase tracking-wider border border-black/10 rounded-sm shadow-sm">
+                        ${kategori}
+                    </div>
+                </figure>
+                <div class="p-4 sm:p-6 flex flex-col flex-grow">
+                    <time datetime="${tanggalAttr}" class="text-[11px] text-brand-charcoalLight font-medium mb-2 block">${tanggalText}</time>
+                    <h3 class="font-serif text-base sm:text-[17px] font-bold text-brand-navy leading-snug mb-2.5 sm:mb-3 group-hover:text-brand-gold transition-colors cursor-pointer" onclick="bukaModalBeritaByIndex(${globalIndex})">
+                        ${judul}
+                    </h3>
+                    <p class="berita-excerpt text-brand-charcoal text-sm font-light leading-relaxed mb-4 sm:mb-5 flex-grow">${ringkasan}</p>
+                    <div class="mt-auto pt-1">
+                        <button type="button" onclick="bukaModalBeritaByIndex(${globalIndex})" class="text-xs font-semibold text-brand-gold hover:text-brand-navy transition-colors inline-flex items-center gap-1.5 cursor-pointer group/btn focus:outline-none">
+                            <span>Baca</span>
+                            <i class="fa-solid fa-arrow-right-long transition-transform duration-300 group-hover/btn:translate-x-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </article>
+        `;
+    }
+
+    function renderSlides(preservePosition = false) {
+        if (!trackEl) return;
+
+        const prevPerSlide = itemsPerSlide;
+        itemsPerSlide = getItemsPerSlide();
+
+        if (preservePosition && prevPerSlide > 0) {
+            const firstVisibleIdx = currentSlideIndex * prevPerSlide;
+            currentSlideIndex = Math.floor(firstVisibleIdx / itemsPerSlide);
+        } else {
+            currentSlideIndex = 0;
+        }
+
+        if (usingFallback) {
+            totalSlides = Math.max(1, Math.ceil(fallbackCards.length / itemsPerSlide));
+            currentSlideIndex = Math.min(currentSlideIndex, totalSlides - 1);
+
+            trackEl.innerHTML = '';
+            for (let i = 0; i < fallbackCards.length; i += itemsPerSlide) {
+                const slideEl = document.createElement('div');
+                slideEl.className = 'berita-slide w-full flex-shrink-0 py-3 px-1.5';
+
+                const gridEl = document.createElement('div');
+                gridEl.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7 items-stretch';
+
+                fallbackCards.slice(i, i + itemsPerSlide).forEach(card => gridEl.appendChild(card));
+                slideEl.appendChild(gridEl);
+                trackEl.appendChild(slideEl);
+            }
+        } else {
+            totalSlides = Math.max(1, Math.ceil(daftarBerita.length / itemsPerSlide));
+            currentSlideIndex = Math.min(currentSlideIndex, totalSlides - 1);
+
+            const slidesHtml = [];
+            for (let i = 0; i < daftarBerita.length; i += itemsPerSlide) {
+                const chunk = daftarBerita.slice(i, i + itemsPerSlide);
+                const cardsHtml = chunk.map((item, offset) => createCardHtml(item, i + offset)).join('');
+                slidesHtml.push(`
+                    <div class="berita-slide w-full flex-shrink-0 py-3 px-1.5">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7 items-stretch">
+                            ${cardsHtml}
+                        </div>
+                    </div>
+                `);
+            }
+            trackEl.innerHTML = slidesHtml.join('');
+        }
+
+        renderDots();
+        observeSlides();
+        requestAnimationFrame(() => goToSlide(currentSlideIndex, false));
+    }
+
+    function bindCarouselEvents() {
+        [prevBtn, prevBtnMobile].forEach(btn => {
+            if (btn) btn.addEventListener('click', () => goToSlide(currentSlideIndex - 1));
+        });
+
+        [nextBtn, nextBtnMobile].forEach(btn => {
+            if (btn) btn.addEventListener('click', () => goToSlide(currentSlideIndex + 1));
+        });
+
+        if (carouselEl) {
+            carouselEl.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    goToSlide(currentSlideIndex - 1);
+                } else if (e.key === 'ArrowRight') {
+                    goToSlide(currentSlideIndex + 1);
+                }
+            });
+        }
+
+        // Dukungan geser sentuh (touch swipe) untuk tablet & smartphone
+        if (viewportEl) {
+            let touchStartX = 0;
+            let touchStartY = 0;
+
+            viewportEl.addEventListener('touchstart', (e) => {
+                if (!e.touches || e.touches.length === 0) return;
+                touchStartX = e.touches[0].clientX;
+                touchStartY = e.touches[0].clientY;
+            }, { passive: true });
+
+            viewportEl.addEventListener('touchend', (e) => {
+                if (!e.changedTouches || e.changedTouches.length === 0) return;
+                const diffX = e.changedTouches[0].clientX - touchStartX;
+                const diffY = e.changedTouches[0].clientY - touchStartY;
+
+                if (Math.abs(diffX) > 45 && Math.abs(diffX) > Math.abs(diffY) * 1.2) {
+                    if (diffX < 0) {
+                        goToSlide(currentSlideIndex + 1);
+                    } else {
+                        goToSlide(currentSlideIndex - 1);
+                    }
+                }
+            }, { passive: true });
+        }
+
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                const nextPerSlide = getItemsPerSlide();
+                if (nextPerSlide !== itemsPerSlide) {
+                    renderSlides(true);
+                } else {
+                    syncViewportHeight(false);
+                }
+            }, 150);
+        });
+    }
+
+    // Inisialisasi saat DOM siap
+    document.addEventListener("DOMContentLoaded", async () => {
+        if (trackEl) {
+            fallbackCards = Array.from(trackEl.querySelectorAll('.editorial-article')).sort((a, b) => {
+                const timeA = parseTanggalBerita(a.querySelector('time')?.getAttribute('datetime')).getTime();
+                const timeB = parseTanggalBerita(b.querySelector('time')?.getAttribute('datetime')).getTime();
+                return timeB - timeA;
+            });
+        }
+        bindCarouselEvents();
+
+        try {
+            // Menggunakan parameter waktu agar data terbaru dari admin langsung terbaca tanpa cache
+            const response = await fetch('./data/berita.json?t=' + new Date().getTime());
+            if (!response.ok) throw new Error('Gagal memuat data CMS');
+
+            const data = await response.json();
+            const artikelTerbit = Array.isArray(data.artikel)
+                ? data.artikel.filter(item => item.status === "Terbit")
+                : [];
+
+            // Pengurutan otomatis sepenuhnya mengikuti kolom tanggal terbaru
+            artikelTerbit.sort((a, b) => {
+                return parseTanggalBerita(b.tanggal).getTime() - parseTanggalBerita(a.tanggal).getTime();
+            });
+
+            if (artikelTerbit.length > 0) {
+                daftarBerita = artikelTerbit;
+                usingFallback = false;
+                renderSlides(false);
+                return;
+            }
+        } catch (error) {
+            console.log("Menunggu konten dari CMS...");
+        }
+
+        // Fallback ke kartu statis jika data CMS belum tersedia / akses lokal
+        usingFallback = true;
+        renderSlides(false);
+    });
+
+    // Ekspos fungsi modal secara global agar tetap kompatibel
+    window.bukaModalBeritaByIndex = function(index) {
+        const item = daftarBerita[index];
+        if (item) window.bukaModalBerita(item);
+    };
+
+    window.bukaModalBerita = function(item) {
+        const modal = document.getElementById('modal-berita');
+        const content = document.getElementById('modal-content');
+        if (!modal || !content || !item) return;
+
+        const tanggalFormatted = formatTanggalBerita(item.tanggal, 'long');
+
+        let isiFormatted = String(item.isi || '');
+        if (!isiFormatted.includes('<p>')) {
+            isiFormatted = isiFormatted.split('\n\n').map(p => `<p>${p}</p>`).join('');
+        }
+
+        content.innerHTML = `
+            <span class="text-xs font-bold text-brand-gold uppercase tracking-widest block mb-2">${escapeHtml(item.kategori)}</span>
+            <h2 class="font-serif text-2xl md:text-3xl font-bold text-brand-navy leading-tight mb-4">${escapeHtml(item.judul)}</h2>
+            <div class="flex items-center gap-4 text-xs text-brand-charcoalLight font-medium mb-6 pb-4 border-b border-brand-charcoalLight/20">
+                <span><i class="fa-regular fa-calendar mr-1"></i> ${escapeHtml(tanggalFormatted)}</span>
+                <span><i class="fa-solid fa-location-dot mr-1"></i> ${escapeHtml(item.lokasi)}</span>
+            </div>
+            <img src="${escapeHtml(resolveFotoUrl(item.foto))}" alt="${escapeHtml(item.judul)}" class="w-full h-auto max-h-[500px] object-contain mb-6 border border-black/10 shadow-sm bg-black/5">
+            <div class="text-brand-charcoal text-base font-light leading-relaxed space-y-4">
+                ${isiFormatted}
+            </div>
+        `;
+
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    };
+
+    window.tutupModal = function() {
+        const modal = document.getElementById('modal-berita');
+        if (!modal) return;
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    };
+
+    window.addEventListener('click', (e) => {
+        const modal = document.getElementById('modal-berita');
+        if (e.target === modal) {
+            window.tutupModal();
+        }
+    });
+
+    window.addEventListener('keydown', (e) => {
+        const modal = document.getElementById('modal-berita');
+        if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+            window.tutupModal();
+        }
+    });
+})();
 </script>
 </body>
 </html>
